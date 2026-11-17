@@ -1,6 +1,6 @@
 {
-  "versionCode": 24,
-  "versionName": "3.2",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.2/VideoSplitter-3.2.apk",
-  "notes": "修复更新无法安装：改用系统安装会话直接拉起安装确认页，不再弹「打开方式」选择器。"
+  "versionCode": 25,
+  "versionName": "3.3",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.3/VideoSplitter-3.3.apk",
+  "notes": "结果区改版：原视频与片段分区展示，片段行新增视频缩略图，点击整行预览。"
 }
