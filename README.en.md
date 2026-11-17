@@ -28,15 +28,16 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v3.8 (latest · versionCode 30)
+### 🚀 v3.9 (latest · versionCode 31)
+
+- **Background splitting**: foreground service keeps splits running across app-switch/screen-off; live progress in the notification bar with a completion alert
+- **Pause / cancel, disk space pre-check, adjustable size limit** (1G–50G custom)
+- **Continuous playback** across segments; new **Split History** page; full **dark mode** support; APK trimmed to arm64-v8a only
+
+### v3.8 (versionCode 30)
 
 - **New hand-designed APP icon**: deep-purple gradient background with a white play button split by a bright cyan cut line (right half offset) — vector-drawn, crisp at any size
 - Removed the top banner image from README
-
-### v3.7 (versionCode 29)
-
-- **Codebase modernization**: minimum requirement raised to **Android 13+** (legacy compatibility branches removed — 8 version checks cleaned up), APIs unified
-- Android 13+ **predictive back gesture** enabled (smoother edge-swipe back)
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 

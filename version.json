@@ -1,6 +1,6 @@
 {
-  "versionCode": 30,
-  "versionName": "3.8",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.8/VideoSplitter-3.8.apk",
-  "notes": "全新自绘 APP 图标（深紫渐变 + 被切割的播放键），README 移除横幅图。"
+  "versionCode": 31,
+  "versionName": "3.9",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.9/VideoSplitter-3.9.apk",
+  "notes": "后台分割+通知进度+暂停/取消、空间预检、上限可调、连续播放、分割历史、深色模式、APK 瘦身。"
 }
