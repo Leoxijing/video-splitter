@@ -1,6 +1,6 @@
 {
-  "versionCode": 23,
-  "versionName": "3.1",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.1/VideoSplitter-3.1.apk",
-  "notes": "修复片段预览黑屏；修复删除二级页列表空白（缩略图现已正常显示）。"
+  "versionCode": 24,
+  "versionName": "3.2",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.2/VideoSplitter-3.2.apk",
+  "notes": "修复更新无法安装：改用系统安装会话直接拉起安装确认页，不再弹「打开方式」选择器。"
 }
