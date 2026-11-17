@@ -1,6 +1,6 @@
 {
-  "versionCode": 20,
-  "versionName": "2.8",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v2.8/VideoSplitter-2.8.apk",
-  "notes": "新增应用内更新：检查更新、下载进度、一键安装；界面改版为磨砂玻璃风格，日志独立成页。"
+  "versionCode": 21,
+  "versionName": "2.9",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v2.9/VideoSplitter-2.9.apk",
+  "notes": "整体改为浅紫色主题；优化删除原视频按钮（玻璃质感、红色警示、删除成功绿色确认）。"
 }
