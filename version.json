@@ -1,6 +1,6 @@
 {
-  "versionCode": 28,
-  "versionName": "3.6",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.6/VideoSplitter-3.6.apk",
-  "notes": "更新下载升级：后台下载不中断，通知栏实时进度，完成后自动/点击通知打开安装。"
+  "versionCode": 29,
+  "versionName": "3.7",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.7/VideoSplitter-3.7.apk",
+  "notes": "代码现代化：最低系统要求提升至 Android 13+，清理低版本兼容分支，启用预测性返回手势。"
 }
