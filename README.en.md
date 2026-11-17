@@ -30,16 +30,16 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v3.4 (latest · versionCode 26)
+### 🚀 v3.7 (latest · versionCode 29)
 
-- **GitHub repo revamp**: bilingual README (zh/en, modeled after the Pulse project) with a project banner
-- **Full changelog built into the APP**: new "Update Log" entry on the main screen, offline access to all versions since v1.0
+- **Codebase modernization**: minimum requirement raised to **Android 13+** (legacy compatibility branches removed — 8 version checks cleaned up), APIs unified
+- Android 13+ **predictive back gesture** enabled (smoother edge-swipe back)
 
-### v3.3 (versionCode 25)
+### v3.6 (versionCode 28)
 
-- **Result section redesign**: original video and segments are shown in separate sections (original section with thumbnail, name, size and delete button; segments under their own group header)
-- **Thumbnails on segment rows**: first-frame thumbnail per segment (background loading, center-cropped); tap the whole row to preview
-- Segments sorted by index
+- **Update download overhaul**: downloads now run in a foreground service — continues in background / screen-off; live progress shown in the notification bar
+- **Auto-opens the installer when done** (app in foreground); tap the notification to install otherwise
+- Android 13+ notification permission handled (requested on first launch)
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
