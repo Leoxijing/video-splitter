@@ -1,6 +1,6 @@
 {
-  "versionCode": 25,
-  "versionName": "3.3",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.3/VideoSplitter-3.3.apk",
-  "notes": "结果区改版：原视频与片段分区展示，片段行新增视频缩略图，点击整行预览。"
+  "versionCode": 26,
+  "versionName": "3.4",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v3.4/VideoSplitter-3.4.apk",
+  "notes": "APP 内置完整更新日记（主界面「更新日志」入口）；仓库 README 中英双语改版。"
 }
