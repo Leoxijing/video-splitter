@@ -4,7 +4,7 @@
 
 <p align="center"><img src="docs/banner.png" alt="VideoSplitter" width="720"></p>
 
-「视频分割」Android APP：按大小上限把大视频**无损**切成多段（ffmpeg 流复制），支持应用内更新、片段缩略图预览、原视频一键清理。
+「视频分割」Android APP：单个视频超过 4G 时，云端传输往往受限——本工具按大小上限把大视频**无损**切成多段（ffmpeg 流复制），切完即可顺畅上传、分享。支持应用内更新、片段缩略图预览、原视频一键清理。
 
 [**⬇️ 下载最新版本**](https://github.com/Leoxijing/video-splitter/releases/latest) · Android 10+ · 纯免费，仅供个人使用，不做商用
 
