@@ -2,8 +2,6 @@
 
 [English](README.en.md) | **简体中文**
 
-<p align="center"><img src="docs/banner.png" alt="VideoSplitter" width="720"></p>
-
 「视频分割」Android APP：单个视频超过 4G 时，云端传输往往受限——本工具按大小上限把大视频**无损**切成多段（ffmpeg 流复制），切完即可顺畅上传、分享。支持应用内更新、片段缩略图预览、原视频一键清理。
 
 [**⬇️ 下载最新版本**](https://github.com/Leoxijing/video-splitter/releases/latest) · **系统要求：Android 13+** · 纯免费，仅供个人使用，不做商用
@@ -30,16 +28,15 @@
 
 ## 更新日志
 
-### 🚀 v3.7（最新 · versionCode 29）
+### 🚀 v3.8（最新 · versionCode 30）
+
+- **全新自绘 APP 图标**：深紫渐变背景 + 被亮青色切割线劈开的白色播放键（右半错位），矢量绘制、任意分辨率清晰
+- README 移除顶部横幅图
+
+### v3.7（versionCode 29）
 
 - **代码现代化重构**：最低系统要求提升至 **Android 13+**（不再维护低版本兼容），清理全部 8 处低版本兼容分支，API 更统一
 - 启用 Android 13+ **预测性返回手势**（屏幕边缘滑动返回更跟手）
-
-### v3.6（versionCode 28）
-
-- **更新下载全面升级**：下载改为后台前台服务——切后台、锁屏均不中断；通知栏实时同步下载进度百分比
-- **下载完成自动打开安装窗口**（APP 在前台时）；后台时点状态栏通知即可安装
-- 适配 Android 13+ 通知权限（首次启动自动申请）
 
 > 完整更新日记（v1.0 至今全部版本，含以上版本）见 [CHANGELOG.md](CHANGELOG.md)；APP 内也可通过「更新日志」查看。
 
@@ -48,7 +45,7 @@
 - `version.json`：最新版本信息（versionCode / versionName / APK 下载地址 / 更新说明）
 - Release Assets：每个版本的 APK 与该版本的 version.json
 - `CHANGELOG.md`：完整更新日记
-- `docs/`：项目横幅图与界面截图
+- `docs/`：界面截图
 
 ## 下载地址
 

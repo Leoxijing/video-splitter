@@ -2,8 +2,6 @@
 
 **English** | [简体中文](README.md)
 
-<p align="center"><img src="docs/banner.png" alt="VideoSplitter" width="720"></p>
-
 An Android app for when a single video over 4 GB hits cloud-transfer limits: it splits large videos into segments under a size limit — **losslessly** (ffmpeg stream copy) — so they upload and share smoothly. With in-app updates, thumbnail previews, and one-tap original-file cleanup.
 
 [**⬇️ Download latest release**](https://github.com/Leoxijing/video-splitter/releases/latest) · **Requires: Android 13+** · Free for personal use, no commercial use
@@ -30,16 +28,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v3.7 (latest · versionCode 29)
+### 🚀 v3.8 (latest · versionCode 30)
+
+- **New hand-designed APP icon**: deep-purple gradient background with a white play button split by a bright cyan cut line (right half offset) — vector-drawn, crisp at any size
+- Removed the top banner image from README
+
+### v3.7 (versionCode 29)
 
 - **Codebase modernization**: minimum requirement raised to **Android 13+** (legacy compatibility branches removed — 8 version checks cleaned up), APIs unified
 - Android 13+ **predictive back gesture** enabled (smoother edge-swipe back)
-
-### v3.6 (versionCode 28)
-
-- **Update download overhaul**: downloads now run in a foreground service — continues in background / screen-off; live progress shown in the notification bar
-- **Auto-opens the installer when done** (app in foreground); tap the notification to install otherwise
-- Android 13+ notification permission handled (requested on first launch)
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
@@ -48,7 +45,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - `version.json`: latest version info (versionCode / versionName / APK URL / release notes)
 - Release Assets: APK and `version.json` for each release
 - `CHANGELOG.md`: complete update diary
-- `docs/`: banner and screenshots
+- `docs/`: screenshots
 
 ## Download
 
