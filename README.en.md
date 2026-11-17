@@ -6,7 +6,7 @@
 
 An Android app for when a single video over 4 GB hits cloud-transfer limits: it splits large videos into segments under a size limit — **losslessly** (ffmpeg stream copy) — so they upload and share smoothly. With in-app updates, thumbnail previews, and one-tap original-file cleanup.
 
-[**⬇️ Download latest release**](https://github.com/Leoxijing/video-splitter/releases/latest) · Android 10+ · Free for personal use, no commercial use
+[**⬇️ Download latest release**](https://github.com/Leoxijing/video-splitter/releases/latest) · **Requires: Android 10+** · Free for personal use, no commercial use
 
 ## Features
 
