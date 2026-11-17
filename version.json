@@ -1,6 +1,6 @@
 {
-  "versionCode": 32,
-  "versionName": "4.0",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.0/VideoSplitter-4.0.apk",
-  "notes": "检查更新玻璃弹窗现代化；深色模式补全（状态栏/标题栏/系统对话框）。"
+  "versionCode": 33,
+  "versionName": "4.1",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.1/VideoSplitter-4.1.apk",
+  "notes": "播放进度条可拖动（修复拖动被拉回）；新增当前/总时长显示。"
 }

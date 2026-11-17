@@ -28,7 +28,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.0 (latest · versionCode 32)
+### 🚀 v4.1 (latest · versionCode 33)
+
+- **Draggable playback seek bar**: auto-refresh pauses while dragging, tracks your finger live, and seeks precisely on release (fixes the snap-back issue)
+- **Playback time display**: current time / total duration shown on both sides of the seek bar, synced live while dragging
+
+### v4.0 (versionCode 32)
 
 - **Modern update-check dialogs**: custom glass-card dialogs (rounded, theme-colored, light/dark adaptive) replace the stock legacy windows
 - **Dark mode completed**: status bar, action bar and system dialogs now fully adapt to dark mode (system-level theme switching)
