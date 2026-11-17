@@ -28,7 +28,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v3.9 (latest · versionCode 31)
+### 🚀 v4.0 (latest · versionCode 32)
+
+- **Modern update-check dialogs**: custom glass-card dialogs (rounded, theme-colored, light/dark adaptive) replace the stock legacy windows
+- **Dark mode completed**: status bar, action bar and system dialogs now fully adapt to dark mode (system-level theme switching)
+
+### v3.9 (versionCode 31)
 
 - **Background splitting**: foreground service keeps splits running across app-switch/screen-off; live progress in the notification bar with a completion alert
 - **Pause / cancel, disk space pre-check, adjustable size limit** (1G–50G custom)
