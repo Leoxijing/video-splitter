@@ -28,7 +28,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.1 (latest · versionCode 33)
+### 🚀 v4.2 (latest · versionCode 34)
+
+- **Two-row player controls**: the seek bar now gets its own full-width row (fixes it being squeezed to zero width), maximizing the drag area
+- Compact button row — the next button is no longer pushed off-screen
+
+### v4.1 (versionCode 33)
 
 - **Draggable playback seek bar**: auto-refresh pauses while dragging, tracks your finger live, and seeks precisely on release (fixes the snap-back issue)
 - **Playback time display**: current time / total duration shown on both sides of the seek bar, synced live while dragging

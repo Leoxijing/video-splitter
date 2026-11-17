@@ -1,6 +1,6 @@
 {
-  "versionCode": 33,
-  "versionName": "4.1",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.1/VideoSplitter-4.1.apk",
-  "notes": "播放进度条可拖动（修复拖动被拉回）；新增当前/总时长显示。"
+  "versionCode": 34,
+  "versionName": "4.2",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.2/VideoSplitter-4.2.apk",
+  "notes": "播放控制栏两行布局：进度条独占全宽可拖动，按钮紧凑不再挤出屏幕。"
 }
