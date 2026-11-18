@@ -1,6 +1,6 @@
 {
-  "versionCode": 47,
-  "versionName": "5.5",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.5/VideoSplitter-5.5.apk",
-  "notes": "修正长按倍速逻辑：长按画面立即进入临时倍速播放（默认 2.0 倍，当前更高则保持），保持长按左右滑动按 0.1 微调 0.5~3.0 倍，松手立即恢复原倍速与播放/暂停状态；暂停时长按会自动起播，松手回到暂停帧。"
+  "versionCode": 48,
+  "versionName": "5.6",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.6/VideoSplitter-5.6.apk",
+  "notes": "修复状态栏安装跳「打开方式」：更新完成通知改为打开 APP 并由 APP 发起系统安装会话，兜底 MIME 修正为 application/vnd.android.package-archive；长按倍速浮层缩小并降低不透明度（约 90%→55%），减少观看遮挡。"
 }

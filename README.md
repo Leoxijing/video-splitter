@@ -22,15 +22,15 @@
 
 ## 更新日志
 
-### 🚀 v5.5（最新 · versionCode 47）
+### 🚀 v5.6（最新 · versionCode 48）
+
+- **修复状态栏安装跳「打开方式」**：更新完成通知改为打开 APP 并由 APP 发起系统安装会话，不再打开 APK 文件；兜底 MIME 修正为 `application/vnd.android.package-archive`
+- **倍速浮层更小更透明**：字号与刻度缩小、背景不透明度约 90%→55%，长按观看遮挡更少
+
+### v5.5（versionCode 47）
 
 - **长按即倍速播放**：长按画面立即以 2.0 倍临时播放（当前倍速更高则保持），长按期间左右滑动按 0.1 微调 0.5~3.0 倍
 - **松手恢复**：松手立即回到原倍速与播放/暂停状态；暂停时长按会自动起播，松手回到暂停帧
-
-### v5.4（versionCode 46）
-
-- **署名与许可核查**：确认无整段复制的第三方代码；补全 smart-exception、AndroidX、Kotlin、Guava 的署名与许可，修正 FFmpeg 许可表述
-- **许可文档**：新增 THIRD_PARTY_NOTICES.md，APP 内「更新日志 → 开源许可」可离线查看完整清单与 LGPL 合规说明
 
 > 完整更新日记（v1.0 至今全部版本）见 [CHANGELOG.md](CHANGELOG.md)；APP 内也可通过「更新日志」查看。
 
