@@ -28,7 +28,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.2 (latest · versionCode 34)
+### 🚀 v4.3 (latest · versionCode 35)
+
+- **Silent auto update check**: checks for the latest version every time the app opens (quietly in the background, no waiting dialog) and only prompts when a new version is found
+- **Fixed floating dialog buttons**: buttons are now built into the glass card with matching background and opacity, with deterministic light/dark color selection
+
+### v4.2 (versionCode 34)
 
 - **Two-row player controls**: the seek bar now gets its own full-width row (fixes it being squeezed to zero width), maximizing the drag area
 - Compact button row — the next button is no longer pushed off-screen
