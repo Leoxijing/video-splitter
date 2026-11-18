@@ -1,6 +1,6 @@
 {
-  "versionCode": 38,
-  "versionName": "4.6",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.6/VideoSplitter-4.6.apk",
-  "notes": "横屏播放画面按比例居中；左半屏上下滑调亮度、右半屏上下滑调音量（互不干扰）；保留双击播放暂停、横滑快进快退与全屏。"
+  "versionCode": 39,
+  "versionName": "4.7",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.7/VideoSplitter-4.7.apk",
+  "notes": "拖动进度条或横滑调进度时实时显示目标帧缩略图与时间，随手指/滑块更新，松手自动隐藏；目标时间自动钳制，取帧失败显示占位图标。"
 }

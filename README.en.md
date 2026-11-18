@@ -21,15 +21,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.6 (latest · versionCode 38)
+### 🚀 v4.7 (latest · versionCode 39)
+
+- **Seek preview thumbnails**: while dragging the seek bar or swiping to seek, a frame thumbnail and its timestamp for the target position are shown live, updating with the finger/slider and auto-hiding on release
+- **Boundaries & fallback**: target time is clamped to the start/end of the video; no preview before the video is ready, and a placeholder icon appears if frame extraction fails
+
+### v4.6 (versionCode 38)
 
 - **Landscape centering fix**: the video now fits its aspect ratio and is centered horizontally and vertically in the container
 - **Brightness/volume gestures**: swipe up/down on the left half to adjust brightness, on the right half to adjust volume — locked to the starting side, independent with live percentage feedback
-
-### v4.5 (versionCode 37)
-
-- **Player redesign**: immersive black UI with gradient top bar and bottom control area, icon buttons and larger touch targets
-- **Double-tap to play/pause, swipe left/right to seek** (direction, distance and speed aware, with a centered live feedback overlay), **landscape fullscreen at bottom-right**, single tap to show/hide controls
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
