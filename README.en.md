@@ -21,13 +21,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.9 (latest · versionCode 41)
+### 🚀 v5.0 (latest · versionCode 42)
+
+- **Smoother scrub tracking**: swiping now seeks the picture live with your finger while the seek bar and time stay in sync; coalesced seek requests keep fast, reverse and continuous scrubbing free of backlog
+
+### v4.9 (versionCode 41)
 
 - **Richer runtime logs**: button and list-item taps, playback controls, gesture adjustments, page entries and key flows are all logged with timestamps
-
-### v4.8 (versionCode 40)
-
-- **Faster seek previews**: thumbnails are cached in 0.5 s buckets and decoded at target size, so scrubbing back is instant; only the latest target is processed, removing lag and flicker
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 

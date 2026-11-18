@@ -1,6 +1,6 @@
 {
-  "versionCode": 41,
-  "versionName": "4.9",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.9/VideoSplitter-4.9.apk",
-  "notes": "运行日志增强：按钮与列表点击、播放控制与手势、页面进入及关键流程均记录，统一时间戳，最多保留 800 条。"
+  "versionCode": 42,
+  "versionName": "5.0",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.0/VideoSplitter-5.0.apk",
+  "notes": "滑动跟手优化：横滑调进度时画面实时跟随手指，进度条与时间同步；定位节流合并，快速/反向/连续滑动无延迟堆积；松手或取消精确落点并恢复播放。"
 }
