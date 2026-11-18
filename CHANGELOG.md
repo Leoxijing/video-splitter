@@ -6,6 +6,14 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v5.4 (versionCode 46)
+- **署名与许可核查**：逐文件核查代码与资源来源，确认无整段复制的第三方业务代码；随包内容为未修改的二进制依赖与图标路径数据
+- **补全第三方署名**：新增 smart-exception（BSD-3-Clause）、AndroidX / Jetpack（Apache-2.0）、Kotlin 标准库（Apache-2.0）、Guava listenablefuture（Apache-2.0）的来源、作者与许可
+- **修正许可表述**：FFmpeg 标注为「上游 LGPL-2.1-or-later，经 ffmpeg-kit `--enable-version3` 构建后随包以 LGPL-3.0 分发」；ffmpeg-kit 明确 LGPL-3.0
+- **新增许可文档**：新增 `THIRD_PARTY_NOTICES.md`（含版本、传递依赖、LGPL 合规说明与源码获取方式），APP 内「更新日志 → 开源许可」可离线查看
+- **代码级标注**：`build.gradle.kts` 依赖注释补全来源与许可；7 个 Material Icons 图标注释补许可全文链接；启动图标与自绘背景标注为原创
+- **说明**：仓库暂未附带 `LICENSE` 文件，README 明确「免费、仅个人使用、不商用」，代码复用/再分发需先与维护者确认
+
 ## v5.3 (versionCode 45)
 - **长按倍速手势**：在视频区域长按 0.5 秒进入倍速控制，保持长按左右滑动以 0.1 为步进切换倍速（向左降低、向右提高），范围 0.5 ~ 3.0 倍
 - **实时反馈**：居中浮层大号显示当前倍速（一位小数，如 1.5 倍）并给出 0.5~3.0 档位刻度；倍速按钮文案同步刷新
