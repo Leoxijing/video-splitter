@@ -1,6 +1,6 @@
 {
-  "versionCode": 42,
-  "versionName": "5.0",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.0/VideoSplitter-5.0.apk",
-  "notes": "滑动跟手优化：横滑调进度时画面实时跟随手指，进度条与时间同步；定位节流合并，快速/反向/连续滑动无延迟堆积；松手或取消精确落点并恢复播放。"
+  "versionCode": 43,
+  "versionName": "5.1",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.1/VideoSplitter-5.1.apk",
+  "notes": "稳定性修复：日志页不再拉回顶部、缩略图解码器泄漏与线程阻塞、离开播放页手势残留；界面统一水波纹与阴影、内容宽度自适应、分组标题、历史统计、日志复制。"
 }
