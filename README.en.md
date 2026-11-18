@@ -21,17 +21,17 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.2 (latest · versionCode 44)
+### 🚀 v5.3 (latest · versionCode 45)
+
+- **Long-press speed gesture**: long-press the video to enter speed control; keep holding and slide left/right to change speed in 0.1 steps (left lower, right higher, 0.5x ~ 3.0x)
+- **Live feedback**: a centered overlay shows the current speed with one decimal and a 0.5~3.0 scale; playback follows the chosen speed instantly and keeps it after release
+
+### v5.2 (versionCode 44)
 
 - **Reliable splitting**: output names are auto-deduplicated (never overwrite previous results) plus resume support — after a cancel/interruption, "continue last time" keeps finished segments and picks up from the breakpoint
 - **Player upgrades**: playback speed (0.5x ~ 3.0x), aspect-ratio modes (fit / stretch / crop), and screen-lock to prevent accidental touches
 - **Management & verification**: multi-select batch delete in history; pause/cancel directly from the notification; per-segment SHA-256 checksums generated on export
 - **Persistent logs**: runtime logs are saved on-device and survive app restarts
-
-### v5.1 (versionCode 43)
-
-- **Stability fixes**: the log page no longer jumps to top on refresh and follows the newest entries; thumbnail retriever leak and thread blocking fixed; gesture state cleaned up when leaving the player
-- **UI polish**: unified press ripples and card elevation; centered, width-capped content; section headings on the home screen; history summary; log copy button and adaptive height
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
