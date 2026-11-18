@@ -13,6 +13,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Automatic re-split**: 5% safety margin; oversized segments are re-cut with a shorter duration
 - **Live progress**: percentage, segment counter, and export progress bar
 - **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (double-tap play/pause, swipe to seek, fullscreen at bottom-right)
+- **Long-press speed playback**: hold the picture to play temporarily at 2.0x; keep holding and slide to fine-tune in 0.1 steps (0.5x~3.0x); release restores the previous speed and play state
 - **Original cleanup**: second-level page with thumbnails and checkboxes; deletes directly (including recycle-bin leftovers)
 - **History thumbnails**: each split-history record shows the first frame of its video — tap to play all segments in sequence
 - **In-app update**: check → download → system install session for one-tap upgrade
@@ -21,15 +22,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.4 (latest · versionCode 46)
+### 🚀 v5.5 (latest · versionCode 47)
+
+- **Long-press = speed playback**: holding the picture starts temporary 2.0x playback immediately (keeps a higher current speed); while holding, slide to fine-tune 0.5x~3.0x in 0.1 steps
+- **Release restores**: releasing returns to the previous speed and play/pause state; holding from a paused frame auto-starts playback and returns to the paused frame on release
+
+### v5.4 (versionCode 46)
 
 - **Attribution & license audit**: confirmed no wholesale copied third-party code; added attribution and licenses for smart-exception, AndroidX, Kotlin and Guava, and corrected the FFmpeg license statement
 - **License document**: added THIRD_PARTY_NOTICES.md, viewable offline in-app via "Update Log → Open-source licenses", including the full inventory and LGPL compliance notes
-
-### v5.3 (versionCode 45)
-
-- **Long-press speed gesture**: long-press the video to enter speed control; keep holding and slide left/right to change speed in 0.1 steps (left lower, right higher, 0.5x ~ 3.0x)
-- **Live feedback**: a centered overlay shows the current speed with one decimal and a 0.5~3.0 scale; playback follows the chosen speed instantly and keeps it after release
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
