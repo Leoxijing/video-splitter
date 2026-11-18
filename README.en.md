@@ -12,7 +12,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Lossless cutting**: ffmpeg `-c copy` stream copy — no re-encoding, no quality loss
 - **Automatic re-split**: 5% safety margin; oversized segments are re-cut with a shorter duration
 - **Live progress**: percentage, segment counter, and export progress bar
-- **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (seek bar / ±10 s skip)
+- **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (double-tap play/pause, swipe to seek, fullscreen at bottom-right)
 - **Original cleanup**: second-level page with thumbnails and checkboxes; deletes directly (including recycle-bin leftovers)
 - **History thumbnails**: each split-history record shows the first frame of its video — tap to play all segments in sequence
 - **In-app update**: check → download → system install session for one-tap upgrade
@@ -29,7 +29,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.4 (latest · versionCode 36)
+### 🚀 v4.5 (latest · versionCode 37)
+
+- **Bilibili-style player redesign**: immersive black UI with gradient top bar and bottom control area, icon buttons and larger touch targets
+- **Double-tap to play/pause, swipe left/right to seek** (direction, distance and speed aware, with a centered live feedback overlay), **landscape fullscreen at bottom-right**, single tap to show/hide controls
+
+### v4.4 (versionCode 36)
 
 - **Thumbnails in Split History**: each record shows the first frame of its video on the left (loaded in the background, center-cropped, rounded corners)
 - **Thumbnail fallback**: if the first segment fails to load, the next one is tried; if all fail, a placeholder icon is shown — records and continuous playback are unaffected
