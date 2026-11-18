@@ -1,6 +1,6 @@
 {
-  "versionCode": 48,
-  "versionName": "5.6",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.6/VideoSplitter-5.6.apk",
-  "notes": "修复状态栏安装跳「打开方式」：更新完成通知改为打开 APP 并由 APP 发起系统安装会话，兜底 MIME 修正为 application/vnd.android.package-archive；长按倍速浮层缩小并降低不透明度（约 90%→55%），减少观看遮挡。"
+  "versionCode": 49,
+  "versionName": "5.7",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.7/VideoSplitter-5.7.apk",
+  "notes": "长按倍速提示重做：改为播放器顶部居中的极简胶囊，仅显示当前倍速（如「2.0倍」），去掉说明文案、刻度与恢复提示；13sp 加粗白字、紧凑内边距、全圆角、深色半透明底。长按触发、倍速切换与隐藏时机保持不变。"
 }
