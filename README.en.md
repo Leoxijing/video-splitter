@@ -21,14 +21,17 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.1 (latest · versionCode 43)
+### 🚀 v5.2 (latest · versionCode 44)
+
+- **Reliable splitting**: output names are auto-deduplicated (never overwrite previous results) plus resume support — after a cancel/interruption, "continue last time" keeps finished segments and picks up from the breakpoint
+- **Player upgrades**: playback speed (0.5x ~ 3.0x), aspect-ratio modes (fit / stretch / crop), and screen-lock to prevent accidental touches
+- **Management & verification**: multi-select batch delete in history; pause/cancel directly from the notification; per-segment SHA-256 checksums generated on export
+- **Persistent logs**: runtime logs are saved on-device and survive app restarts
+
+### v5.1 (versionCode 43)
 
 - **Stability fixes**: the log page no longer jumps to top on refresh and follows the newest entries; thumbnail retriever leak and thread blocking fixed; gesture state cleaned up when leaving the player
 - **UI polish**: unified press ripples and card elevation; centered, width-capped content; section headings on the home screen; history summary; log copy button and adaptive height
-
-### v5.0 (versionCode 42)
-
-- **Smoother scrub tracking**: swiping now seeks the picture live with your finger while the seek bar and time stay in sync; coalesced seek requests keep fast, reverse and continuous scrubbing free of backlog
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 

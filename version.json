@@ -1,6 +1,6 @@
 {
-  "versionCode": 43,
-  "versionName": "5.1",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.1/VideoSplitter-5.1.apk",
-  "notes": "稳定性修复：日志页不再拉回顶部、缩略图解码器泄漏与线程阻塞、离开播放页手势残留；界面统一水波纹与阴影、内容宽度自适应、分组标题、历史统计、日志复制。"
+  "versionCode": 44,
+  "versionName": "5.2",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.2/VideoSplitter-5.2.apk",
+  "notes": "分割更可靠：输出命名去重 + 断点续传（取消/中断后可继续上次）；播放器新增倍速、画面比例、锁屏；历史多选批量删除；通知栏暂停/取消；导出同步生成 SHA-256 校验值；日志落盘重启不丢失。"
 }
