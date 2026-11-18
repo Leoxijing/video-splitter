@@ -22,15 +22,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.7 (latest · versionCode 49)
+### 🚀 v5.8 (latest · versionCode 50)
+
+- **Unified seek hint**: the swipe fast-forward/rewind hint now uses the same top pill as the speed hint, showing a single line like "快进 00:18 · 2.0×" and hiding 0.65s after release
+- **Everything else unchanged**: speed gesture, progress dragging, thumbnail preview and playback controls are untouched
+
+### v5.7 (versionCode 49)
 
 - **Redesigned long-press speed indicator**: a minimal pill at the top center showing only the current speed (e.g. "2.0倍"), with no captions, scale or restore hints
 - **Style matches the reference**: 13sp bold white text, compact padding, fully rounded pill, dark translucent background; long-press trigger and hide timing unchanged
-
-### v5.6 (versionCode 48)
-
-- **Fixed "Open with" chooser on notification install**: the ready-to-install notification now opens the app and starts a system install session instead of opening the APK file; fallback MIME corrected to `application/vnd.android.package-archive`
-- **Smaller, more transparent speed overlay**: reduced font sizes and tick marks, background opacity ~90% → ~55%, so it blocks less of the picture
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 

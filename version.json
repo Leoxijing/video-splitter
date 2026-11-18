@@ -1,6 +1,6 @@
 {
-  "versionCode": 49,
-  "versionName": "5.7",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.7/VideoSplitter-5.7.apk",
-  "notes": "长按倍速提示重做：改为播放器顶部居中的极简胶囊，仅显示当前倍速（如「2.0倍」），去掉说明文案、刻度与恢复提示；13sp 加粗白字、紧凑内边距、全圆角、深色半透明底。长按触发、倍速切换与隐藏时机保持不变。"
+  "versionCode": 50,
+  "versionName": "5.8",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.8/VideoSplitter-5.8.apk",
+  "notes": "快进提示重做：横滑快进/快退提示改为与长按倍速提示相同的顶部胶囊，位置、尺寸、圆角、底色、字号、层级与显隐时机一致；单行显示「快进 00:18 · 2.0×」，松手约 0.65 秒隐藏，关闭后进度与播放状态同步。仅改动快进提示，倍速手势与其他播放功能不变。"
 }
