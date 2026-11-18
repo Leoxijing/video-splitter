@@ -1,6 +1,6 @@
 {
-  "versionCode": 45,
-  "versionName": "5.3",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.3/VideoSplitter-5.3.apk",
-  "notes": "播放器新增长按倍速手势：长按视频进入倍速控制，保持长按左右滑动按 0.1 步进切换（左降右升，0.5~3.0 倍），浮层实时显示一位小数倍速，视频按所选倍速即时播放并在松手后保持。"
+  "versionCode": 46,
+  "versionName": "5.4",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.4/VideoSplitter-5.4.apk",
+  "notes": "署名与许可核查：确认无整段复制的第三方代码；补全 smart-exception（BSD-3-Clause）、AndroidX、Kotlin、Guava（Apache-2.0）署名，修正 FFmpeg 许可表述；新增 THIRD_PARTY_NOTICES.md，APP 内「更新日志 → 开源许可」可离线查看。"
 }

@@ -1,0 +1,62 @@
+# 第三方组件与开源许可声明
+
+本文件是 VideoSplitter（视频分割）APP 的第三方组件清单与许可声明，随 APP 分发并在应用内「更新日志 → 开源许可」中展示。
+
+- 适用版本：v5.4（versionCode 46）及以后
+- 核查方式：逐文件检查 `app/src` 代码与资源、`app/build.gradle.kts` 依赖声明，并用 Gradle `releaseRuntimeClasspath` 依赖树确认实际打包内容
+- 结论：本项目未包含整段复制自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**图标路径数据**
+
+## 一、随 APK 分发的第三方组件
+
+| 组件 | 版本 | 来源 | 原作者 | 许可 | 在本项目中的用途 |
+| --- | --- | --- | --- | --- | --- |
+| FFmpeg（libavcodec / libavformat / libavutil / libswresample / libswscale 等） | 随 ffmpeg-kit-min 6.0-2 打包（FFmpeg 6.0 系列） | https://ffmpeg.org/ | FFmpeg Team | 上游为 LGPL-2.1-or-later；经 ffmpeg-kit 以 `--enable-version3` 构建，随包以 **LGPL-3.0** 分发 | 无损切割（`-c copy` 流复制）与转封装 |
+| ffmpeg-kit（`com.arthenica:ffmpeg-kit-min:6.0-2`） | 6.0-2 | https://github.com/arthenica/ffmpeg-kit | Tanersener（Arthenica） | **LGPL-3.0** | FFmpeg 的 Android/JNI 封装与命令执行 |
+| smart-exception-java / smart-exception-common（`com.arthenica:smart-exception-*:0.2.1`） | 0.2.1 | https://github.com/tanersener/smart-exception | Tanersener | **BSD-3-Clause** | ffmpeg-kit 的传递依赖（内部异常封装） |
+| AndroidX / Jetpack：`androidx.core:core-ktx:1.13.1`、`androidx.core:core`、`androidx.annotation`、`androidx.collection`、`androidx.concurrent`、`androidx.interpolator`、`androidx.lifecycle`、`androidx.arch.core`、`androidx.profileinstaller`、`androidx.startup`、`androidx.tracing`、`androidx.versionedparcelable` 等 | 1.13.1 及其传递版本 | https://developer.android.com/jetpack/androidx | The Android Open Source Project / Google LLC | **Apache-2.0** | `FileProvider`（APK 安装授权）等基础组件 |
+| Kotlin 标准库：`org.jetbrains.kotlin:kotlin-stdlib`、`kotlin-stdlib-common`、`org.jetbrains:annotations` | 1.9.24 / 13.0 | https://kotlinlang.org/ | JetBrains s.r.o. | **Apache-2.0** | Kotlin 运行时 |
+| Guava listenablefuture（`com.google.guava:listenablefuture:1.0`） | 1.0 | https://github.com/google/guava | Google LLC | **Apache-2.0** | AndroidX 的传递依赖 |
+| Material Icons（图标路径数据） | — | https://fonts.google.com/icons | Google LLC | **Apache-2.0** | 界面矢量图标：`ic_arrow_back`、`ic_pause`、`ic_play_arrow`、`ic_skip_next`、`ic_fullscreen`、`ic_fullscreen_exit`、`ic_video_placeholder` |
+
+许可全文：
+
+- LGPL-3.0：https://www.gnu.org/licenses/lgpl-3.0.html
+- LGPL-2.1：https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+- Apache-2.0：https://www.apache.org/licenses/LICENSE-2.0
+- BSD-3-Clause：https://opensource.org/license/bsd-3-clause
+
+## 二、LGPL-3.0 合规说明（FFmpeg / ffmpeg-kit）
+
+1. **未修改**：本项目未修改 FFmpeg、ffmpeg-kit 及 smart-exception 的任何源码或二进制，仅通过公开 API 调用。
+2. **可替换性**：FFmpeg 以动态库（`.so`）形式随 APK 打包，Java/Kotlin 层通过 ffmpeg-kit 的公开 JNI 接口调用。需要替换库的用户可自行获取对应 AAR 或从源码重新构建 APK；本项目不限制此类替换，也不使用阻止替换的技术措施。
+3. **源码获取**：
+   - ffmpeg-kit：https://github.com/arthenica/ffmpeg-kit （含 `min` 变体的构建脚本）
+   - FFmpeg：https://ffmpeg.org/download.html 与 https://git.ffmpeg.org/ffmpeg.git
+   - AAR 坐标：`com.arthenica:ffmpeg-kit-min:6.0-2`（Maven Central）
+4. **许可文本**：LGPL-3.0 全文链接见上；如需离线副本，可从上述官方地址获取。
+5. **无 GPL 组件**：使用的是 `min` 变体（不含 `-gpl` 后缀），未启用 `--enable-gpl`，不包含 GPL 授权的 FFmpeg 组件。
+
+## 三、图标与视觉资源
+
+- 7 个界面矢量图标的路径数据来自 Google Material Icons（Apache-2.0），已在各 `ic_*.xml` 文件头注释中标注来源、原作者与许可，并在 README「第三方组件与署名」区块列出。
+- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_*.xml`、`progress_round.xml`）为本项目原创绘制，不含第三方素材。
+- 未内置任何第三方字体文件；界面文字使用系统字体（`Typeface.DEFAULT` / `MONOSPACE`）。
+- `design_icons.py` 为开发期图标预览脚本（依赖 Pillow），不随 APK 分发，不属于分发内容。
+
+## 四、开发与构建工具（不随 APK 分发）
+
+Android SDK、Gradle、Kotlin 编译器、Android Gradle Plugin、Pillow 等仅用于构建与开发，未以代码或资源形式打包进 APK。
+
+## 五、项目自身版权与许可
+
+- 业务代码（`app/src/main/java/com/tools/videosplit/*.kt`）、自绘资源与文档由本项目维护者编写；其中代码在 AI 辅助下生成并经维护者审阅。
+- **当前状态**：仓库未附带 `LICENSE` 文件；README 仅声明「本软件纯免费，仅供个人使用，不做任何商用」，该表述是使用声明而非标准开源许可证。
+- **待确认**：若希望他人可合法复用、修改或再分发本项目代码，需要明确选择一个许可证（如 MIT、Apache-2.0）或明确保留「All rights reserved」。在确认前，默认保留所有权利，仅授权个人非商业使用。
+
+## 六、仍需确认的事项
+
+1. 项目自身许可证尚未确定（无 `LICENSE` 文件），见第五节。
+2. FFmpeg 精确版本号：`ffmpeg-kit-min:6.0-2` 对应 FFmpeg 6.0 系列；若需逐位精确（如 6.0.x），可在设备上执行 `ffmpeg -version` 或查阅 AAR 内版本字符串确认。
+3. LGPL 合规是否需要额外提供源码离线包（当前提供上游链接与 Maven 坐标）。
+4. 本项目源码目前未在 GitHub 公开（仓库仅含文档与版本信息），因此「可替换库」依赖用户自行从 Maven 获取 AAR 重建；如需更完整的合规体验，可考虑公开源码或提供未签名构建说明。
+5. AI 生成代码的相似性无法完全排除：已逐文件核查未发现整段复制痕迹，若后续发现与某开源项目高度相似，应按同一规则补充署名。
