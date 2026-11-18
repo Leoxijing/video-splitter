@@ -21,15 +21,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.5 (latest · versionCode 37)
+### 🚀 v4.6 (latest · versionCode 38)
 
-- **Bilibili-style player redesign**: immersive black UI with gradient top bar and bottom control area, icon buttons and larger touch targets
+- **Landscape centering fix**: the video now fits its aspect ratio and is centered horizontally and vertically in the container
+- **Brightness/volume gestures**: swipe up/down on the left half to adjust brightness, on the right half to adjust volume — locked to the starting side, independent with live percentage feedback
+
+### v4.5 (versionCode 37)
+
+- **Player redesign**: immersive black UI with gradient top bar and bottom control area, icon buttons and larger touch targets
 - **Double-tap to play/pause, swipe left/right to seek** (direction, distance and speed aware, with a centered live feedback overlay), **landscape fullscreen at bottom-right**, single tap to show/hide controls
-
-### v4.4 (versionCode 36)
-
-- **Thumbnails in Split History**: each record shows the first frame of its video on the left (loaded in the background, center-cropped, rounded corners)
-- **Thumbnail fallback**: if the first segment fails to load, the next one is tried; if all fail, a placeholder icon is shown — records and continuous playback are unaffected
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
