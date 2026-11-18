@@ -1,6 +1,6 @@
 {
-  "versionCode": 39,
-  "versionName": "4.7",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.7/VideoSplitter-4.7.apk",
-  "notes": "拖动进度条或横滑调进度时实时显示目标帧缩略图与时间，随手指/滑块更新，松手自动隐藏；目标时间自动钳制，取帧失败显示占位图标。"
+  "versionCode": 40,
+  "versionName": "4.8",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.8/VideoSplitter-4.8.apk",
+  "notes": "进度预览性能优化：缩略图分桶缓存 + 按目标尺寸解码，回拖即时显示；只处理最新目标，消除延迟与回跳闪烁。"
 }
