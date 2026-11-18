@@ -65,3 +65,5 @@ This app uses or references the following third-party projects. Source links, pr
 Apart from the third-party components above, the UI, business logic, cleanup/preview/in-app-update features are original implementations.
 
 **License**: Free for personal use only; no commercial use.
+
+**Generation notice**: Purely AI-generated, reviewed and published by the maintainer.
