@@ -1,6 +1,6 @@
 {
-  "versionCode": 40,
-  "versionName": "4.8",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.8/VideoSplitter-4.8.apk",
-  "notes": "进度预览性能优化：缩略图分桶缓存 + 按目标尺寸解码，回拖即时显示；只处理最新目标，消除延迟与回跳闪烁。"
+  "versionCode": 41,
+  "versionName": "4.9",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.9/VideoSplitter-4.9.apk",
+  "notes": "运行日志增强：按钮与列表点击、播放控制与手势、页面进入及关键流程均记录，统一时间戳，最多保留 800 条。"
 }

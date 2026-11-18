@@ -21,14 +21,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.8 (latest · versionCode 40)
+### 🚀 v4.9 (latest · versionCode 41)
+
+- **Richer runtime logs**: button and list-item taps, playback controls, gesture adjustments, page entries and key flows are all logged with timestamps
+
+### v4.8 (versionCode 40)
 
 - **Faster seek previews**: thumbnails are cached in 0.5 s buckets and decoded at target size, so scrubbing back is instant; only the latest target is processed, removing lag and flicker
-
-### v4.7 (versionCode 39)
-
-- **Seek preview thumbnails**: while dragging the seek bar or swiping to seek, a frame thumbnail and its timestamp for the target position are shown live, updating with the finger/slider and auto-hiding on release
-- **Boundaries & fallback**: target time is clamped to the start/end of the video; no preview before the video is ready, and a placeholder icon appears if frame extraction fails
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
