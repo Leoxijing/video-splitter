@@ -66,4 +66,4 @@ Apart from the third-party components above, the UI, business logic, cleanup/pre
 
 **License**: Free for personal use only; no commercial use.
 
-**Generation notice**: Purely AI-generated, reviewed and published by the maintainer.
+**Generation notice**: Purely AI-generated.
