@@ -1,6 +1,6 @@
 {
-  "versionCode": 44,
-  "versionName": "5.2",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.2/VideoSplitter-5.2.apk",
-  "notes": "分割更可靠：输出命名去重 + 断点续传（取消/中断后可继续上次）；播放器新增倍速、画面比例、锁屏；历史多选批量删除；通知栏暂停/取消；导出同步生成 SHA-256 校验值；日志落盘重启不丢失。"
+  "versionCode": 45,
+  "versionName": "5.3",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.3/VideoSplitter-5.3.apk",
+  "notes": "播放器新增长按倍速手势：长按视频进入倍速控制，保持长按左右滑动按 0.1 步进切换（左降右升，0.5~3.0 倍），浮层实时显示一位小数倍速，视频按所选倍速即时播放并在松手后保持。"
 }
