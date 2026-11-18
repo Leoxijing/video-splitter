@@ -14,6 +14,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Live progress**: percentage, segment counter, and export progress bar
 - **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (seek bar / ±10 s skip)
 - **Original cleanup**: second-level page with thumbnails and checkboxes; deletes directly (including recycle-bin leftovers)
+- **History thumbnails**: each split-history record shows the first frame of its video — tap to play all segments in sequence
 - **In-app update**: check → download → system install session for one-tap upgrade
 - **Full changelog in-app**: an "Update Log" page renders the complete version history offline
 - **Frosted-glass light-purple theme**
@@ -28,7 +29,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v4.3 (latest · versionCode 35)
+### 🚀 v4.4 (latest · versionCode 36)
+
+- **Thumbnails in Split History**: each record shows the first frame of its video on the left (loaded in the background, center-cropped, rounded corners)
+- **Thumbnail fallback**: if the first segment fails to load, the next one is tried; if all fail, a placeholder icon is shown — records and continuous playback are unaffected
+
+### v4.3 (versionCode 35)
 
 - **Silent auto update check**: checks for the latest version every time the app opens (quietly in the background, no waiting dialog) and only prompts when a new version is found
 - **Fixed floating dialog buttons**: buttons are now built into the glass card with matching background and opacity, with deterministic light/dark color selection
@@ -82,4 +88,4 @@ Apart from the third-party component above, the UI, business logic, cleanup/prev
 
 **License**: Free for personal use only; no commercial use.
 
-**Author: Super XiaoAi · APP v3.4**
+**Author: Leoxijing · APP v4.4**

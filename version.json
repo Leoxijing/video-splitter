@@ -1,6 +1,6 @@
 {
-  "versionCode": 35,
-  "versionName": "4.3",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.3/VideoSplitter-4.3.apk",
-  "notes": "自动检查更新静默化（发现新版才弹窗）；修复更新弹窗按钮悬空与透明度不一致。"
+  "versionCode": 36,
+  "versionName": "4.4",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v4.4/VideoSplitter-4.4.apk",
+  "notes": "分割历史新增视频缩略图（后台加载首帧、缺失自动重试并显示占位图标）；移除旧版作者署名。"
 }
