@@ -19,14 +19,6 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Full changelog in-app**: an "Update Log" page renders the complete version history offline
 - **Frosted-glass light-purple theme**
 
-## Screenshots
-
-<!-- Put APP screenshots into docs/screenshots/ and reference them here, e.g.:
-![Main](docs/screenshots/main.png)
--->
-
-> Contributions of APP screenshots (main / results / player) are welcome — drop them into `docs/screenshots/`.
-
 ## Changelog
 
 ### 🚀 v4.5 (latest · versionCode 37)
@@ -39,37 +31,6 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Thumbnails in Split History**: each record shows the first frame of its video on the left (loaded in the background, center-cropped, rounded corners)
 - **Thumbnail fallback**: if the first segment fails to load, the next one is tried; if all fail, a placeholder icon is shown — records and continuous playback are unaffected
 
-### v4.3 (versionCode 35)
-
-- **Silent auto update check**: checks for the latest version every time the app opens (quietly in the background, no waiting dialog) and only prompts when a new version is found
-- **Fixed floating dialog buttons**: buttons are now built into the glass card with matching background and opacity, with deterministic light/dark color selection
-
-### v4.2 (versionCode 34)
-
-- **Two-row player controls**: the seek bar now gets its own full-width row (fixes it being squeezed to zero width), maximizing the drag area
-- Compact button row — the next button is no longer pushed off-screen
-
-### v4.1 (versionCode 33)
-
-- **Draggable playback seek bar**: auto-refresh pauses while dragging, tracks your finger live, and seeks precisely on release (fixes the snap-back issue)
-- **Playback time display**: current time / total duration shown on both sides of the seek bar, synced live while dragging
-
-### v4.0 (versionCode 32)
-
-- **Modern update-check dialogs**: custom glass-card dialogs (rounded, theme-colored, light/dark adaptive) replace the stock legacy windows
-- **Dark mode completed**: status bar, action bar and system dialogs now fully adapt to dark mode (system-level theme switching)
-
-### v3.9 (versionCode 31)
-
-- **Background splitting**: foreground service keeps splits running across app-switch/screen-off; live progress in the notification bar with a completion alert
-- **Pause / cancel, disk space pre-check, adjustable size limit** (1G–50G custom)
-- **Continuous playback** across segments; new **Split History** page; full **dark mode** support; APK trimmed to arm64-v8a only
-
-### v3.8 (versionCode 30)
-
-- **New hand-designed APP icon**: deep-purple gradient background with a white play button split by a bright cyan cut line (right half offset) — vector-drawn, crisp at any size
-- Removed the top banner image from README
-
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
 ## Files
@@ -77,20 +38,30 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - `version.json`: latest version info (versionCode / versionName / APK URL / release notes)
 - Release Assets: APK and `version.json` for each release
 - `CHANGELOG.md`: complete update diary
-- `docs/`: screenshots
 
 ## Download
 
 - Version info: `https://github.com/Leoxijing/video-splitter/releases/latest/download/version.json`
 
-## Third-party & authorship
+## Third-party components & attribution
 
-This app's video-splitting capability is built on the following open-source project, gratefully acknowledged:
+This app uses or references the following third-party projects. Source links, provenance and original author attribution are stated explicitly below:
 
-- **FFmpeg** (invoked via [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit), `ffmpeg-kit-min` variant) — provides the core lossless splitting (`-c copy` stream copy), licensed under LGPL-2.1-or-later. Project: https://ffmpeg.org/
+- **FFmpeg** — provides the core lossless video splitting (`-c copy` stream copy)
+  - Source: https://ffmpeg.org/
+  - Provenance: invoked via the `ffmpeg-kit-min` variant of [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit) (see the dependency in `app/build.gradle.kts`)
+  - Original author: The FFmpeg Team
+  - License: LGPL-2.1-or-later
+- **ffmpeg-kit** — Android wrapper library for FFmpeg
+  - Source: https://github.com/arthenica/ffmpeg-kit
+  - Original author: Tanersener (Arthenica)
+  - License: LGPL-3.0-or-later
+- **Material Icons** — path data for the play, pause, next, fullscreen and back vector icons
+  - Source: https://fonts.google.com/icons
+  - Provenance: icon paths from Google Material Design Icons, used in `app/src/main/res/drawable/ic_*.xml`
+  - Original author: Google LLC
+  - License: Apache License 2.0
 
-Apart from the third-party component above, the UI, business logic, cleanup/preview/in-app-update features are original implementations.
+Apart from the third-party components above, the UI, business logic, cleanup/preview/in-app-update features are original implementations.
 
 **License**: Free for personal use only; no commercial use.
-
-**Author: Leoxijing · APP v4.4**

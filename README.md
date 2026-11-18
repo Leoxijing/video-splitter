@@ -19,14 +19,6 @@
 - **完整更新日记**：APP 内置「更新日志」页，离线查看全部版本记录
 - **磨砂玻璃浅紫主题**
 
-## 界面预览
-
-<!-- APP 截图放入 docs/screenshots/ 后在此引用，例如：
-![主界面](docs/screenshots/main.png)
--->
-
-> 欢迎提交 APP 界面截图（主界面 / 结果区 / 播放页），放入 `docs/screenshots/` 即可展示在此。
-
 ## 更新日志
 
 ### 🚀 v4.5（最新 · versionCode 37）
@@ -39,45 +31,13 @@
 - **分割历史新增视频缩略图**：每条记录左侧展示对应视频首帧（后台加载、中心裁剪、圆角），列表更直观
 - **缩略图容错**：首段读取失败自动尝试下一段，全部失败时显示占位图标，不影响记录展示与连续播放
 
-### v4.3（versionCode 35）
-
-- **自动检查更新静默化**：每次进入 APP 自动获取最新版本（后台静默，不弹等待窗），发现新版本才弹窗提醒
-- **修复更新弹窗按钮悬空**：按钮内置进玻璃卡片，与卡片同底同透明度，深浅色确定性选色
-
-### v4.2（versionCode 34）
-
-- **播放控制栏两行布局**：进度条独占一行全宽（修复被按钮挤成 0 宽不可见的问题），拖动区域最大化
-- 按钮行紧凑化，下一条按钮不再被挤出屏幕
-
-### v4.1（versionCode 33）
-
-- **播放进度条可拖动**：拖动期间暂停自动刷新、实时跟手、松手精准定位（修复拖动被拉回）
-- **新增播放时间显示**：进度条两侧显示当前时间/总时长，拖动时实时同步
-
-### v4.0（versionCode 32）
-
-- **检查更新弹窗现代化**：自定义玻璃卡片弹窗（圆角、主题配色、深浅色自适配），替换系统老式白底窗口
-- **深色模式补全**：状态栏、标题栏、系统对话框全面深色适配（系统级主题自动切换）
-
-### v3.9（versionCode 31）
-
-- **分割支持后台运行**：前台服务保活，切后台/锁屏不中断；通知栏实时进度，完成后通知栏提醒
-- **暂停/取消、磁盘空间预检、分割上限可调**（1G~50G 自定义）
-- **连续播放**：播完自动接下一段；新增**分割历史**页；全面适配**深色模式**；APK 仅保留 arm64-v8a
-
-### v3.8（versionCode 30）
-
-- **全新自绘 APP 图标**：深紫渐变背景 + 被亮青色切割线劈开的白色播放键（右半错位），矢量绘制、任意分辨率清晰
-- README 移除顶部横幅图
-
-> 完整更新日记（v1.0 至今全部版本，含以上版本）见 [CHANGELOG.md](CHANGELOG.md)；APP 内也可通过「更新日志」查看。
+> 完整更新日记（v1.0 至今全部版本）见 [CHANGELOG.md](CHANGELOG.md)；APP 内也可通过「更新日志」查看。
 
 ## 文件说明
 
 - `version.json`：最新版本信息（versionCode / versionName / APK 下载地址 / 更新说明）
 - Release Assets：每个版本的 APK 与该版本的 version.json
 - `CHANGELOG.md`：完整更新日记
-- `docs/`：界面截图
 
 ## 下载地址
 
@@ -85,12 +45,23 @@
 
 ## 第三方组件与署名
 
-本 APP 的视频切割能力基于以下开源项目，在此致谢并署名声明：
+本 APP 在实现过程中使用或引用了以下第三方项目，在此明确标注来源链接、出处说明与原作者署名：
 
-- **FFmpeg**（通过 [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit) 调用，`ffmpeg-kit-min` 变体）— 提供无损视频切割（`-c copy` 流复制）核心能力，采用 LGPL-2.1-or-later 许可。项目地址：https://ffmpeg.org/
+- **FFmpeg** — 提供无损视频切割（`-c copy` 流复制）核心能力
+  - 来源链接：https://ffmpeg.org/
+  - 出处说明：通过 [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit) 的 `ffmpeg-kit-min` 变体调用（依赖声明见 `app/build.gradle.kts`）
+  - 原作者署名：FFmpeg 开发团队（FFmpeg Team）
+  - 许可：LGPL-2.1-or-later
+- **ffmpeg-kit** — FFmpeg 的 Android 封装库
+  - 来源链接：https://github.com/arthenica/ffmpeg-kit
+  - 原作者署名：Tanersener（Arthenica）
+  - 许可：LGPL-3.0-or-later
+- **Material Icons** — 播放、暂停、下一条、全屏、返回等界面矢量图标的路径数据
+  - 来源链接：https://fonts.google.com/icons
+  - 出处说明：图标路径取自 Google Material Design Icons，用于 `app/src/main/res/drawable/ic_*.xml`
+  - 原作者署名：Google LLC
+  - 许可：Apache License 2.0
 
 除上述第三方组件外，本项目的界面、业务逻辑、删除/预览/应用内更新等功能代码均为原创实现。
 
 **许可声明**：本软件纯免费，仅供个人使用，不做任何商用。
-
-**作者：Leoxijing · APP v4.4**
