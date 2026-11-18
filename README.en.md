@@ -22,15 +22,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.5 (latest · versionCode 47)
+### 🚀 v5.6 (latest · versionCode 48)
+
+- **Fixed "Open with" chooser on notification install**: the ready-to-install notification now opens the app and starts a system install session instead of opening the APK file; fallback MIME corrected to `application/vnd.android.package-archive`
+- **Smaller, more transparent speed overlay**: reduced font sizes and tick marks, background opacity ~90% → ~55%, so it blocks less of the picture
+
+### v5.5 (versionCode 47)
 
 - **Long-press = speed playback**: holding the picture starts temporary 2.0x playback immediately (keeps a higher current speed); while holding, slide to fine-tune 0.5x~3.0x in 0.1 steps
 - **Release restores**: releasing returns to the previous speed and play/pause state; holding from a paused frame auto-starts playback and returns to the paused frame on release
-
-### v5.4 (versionCode 46)
-
-- **Attribution & license audit**: confirmed no wholesale copied third-party code; added attribution and licenses for smart-exception, AndroidX, Kotlin and Guava, and corrected the FFmpeg license statement
-- **License document**: added THIRD_PARTY_NOTICES.md, viewable offline in-app via "Update Log → Open-source licenses", including the full inventory and LGPL compliance notes
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
