@@ -12,6 +12,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Lossless cutting**: ffmpeg `-c copy` stream copy — no re-encoding, no quality loss
 - **Automatic re-split**: 5% safety margin; oversized segments are re-cut with a shorter duration
 - **Live progress**: phase badge, large percentage, rounded gradient bar with 0%/100% scale, phase-aware colors and smooth transitions
+- **Theme color**: 8 preset palettes + RGB sliders, synced across home/history/cleanup/logs/player
 - **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (double-tap play/pause, swipe to seek, fullscreen at bottom-right)
 - **Long-press speed playback**: hold the picture to play temporarily at 2.0x; keep holding and slide to fine-tune in 0.1 steps (0.5x~3.0x); release restores the previous speed and play state
 - **Original cleanup**: second-level page with thumbnails and checkboxes; deletes directly (including recycle-bin leftovers)
@@ -22,17 +23,19 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v5.9 (latest · versionCode 51)
+### 🚀 v6.0 (latest · versionCode 52)
+
+- **Dialogs modernized**: the split confirmation (with "Resume last"), cancel, size-limit picker, custom limit, delete confirmations, permission prompts and install fallback all replaced with glass-card dialogs; destructive actions get a red primary button
+- **Theme color**: new "Theme color" entry on the home page with 8 preset palettes and RGB sliders (live preview); the choice persists and every page plus the player recolors instantly, with one-tap restore to default
+- **Stable default theme**: without customization the original purple palette is kept, identical to the previous release
+- **Everything else unchanged**: split/pause/resume/export/in-app-update logic untouched; single-column layout kept, no tablet dual-pane
+
+### v5.9 (versionCode 51)
 
 - **Progress panel redesigned**: a phase badge (status dot + label) beside the large percentage, with the gradient bar, 0%/100% scale and a phase-colored detail accent stacked below; long file names wrap to two lines and truncate
 - **Color & motion**: bar, badge and percentage recolor by phase (amber paused / green done / red cancelled or failed), 220ms smooth progress animation, fade-in/out on phase changes and card visibility
 - **Responsive**: larger padding, type and bar height on wide screens; single-column layout kept, no tablet dual-pane
 - **Data & features unchanged**: status text, progress values, pause/cancel/resume/export/in-app-update logic are all untouched — display layer only
-
-### v5.8 (versionCode 50)
-
-- **Unified seek hint**: the swipe fast-forward/rewind hint now uses the same top pill as the speed hint, showing a single line like "快进 00:18 · 2.0×" and hiding 0.65s after release
-- **Everything else unchanged**: speed gesture, progress dragging, thumbnail preview and playback controls are untouched
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
