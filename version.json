@@ -1,6 +1,6 @@
 {
-  "versionCode": 50,
-  "versionName": "5.8",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.8/VideoSplitter-5.8.apk",
-  "notes": "快进提示重做：横滑快进/快退提示改为与长按倍速提示相同的顶部胶囊，位置、尺寸、圆角、底色、字号、层级与显隐时机一致；单行显示「快进 00:18 · 2.0×」，松手约 0.65 秒隐藏，关闭后进度与播放状态同步。仅改动快进提示，倍速手势与其他播放功能不变。"
+  "versionCode": 51,
+  "versionName": "5.9",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v5.9/VideoSplitter-5.9.apk",
+  "notes": "主页进度展示区现代化：新增带状态圆点的阶段标签（待机/分割中/导出中/已暂停/已完成等），大百分比与渐变进度条分层排布，补充 0%/100% 刻度与阶段色详情竖条；进度条改为随系统深浅色与阶段换色的圆角渐变条，进度数值 220ms 平滑过渡，阶段切换与卡片显隐加入淡入淡出，宽屏自动放大字号与间距。状态文本、进度数值及暂停/取消/续传/导出/更新等数据逻辑与功能全部不变，仅重构展示层；仍为单列布局，未新增平板双栏布局。"
 }
