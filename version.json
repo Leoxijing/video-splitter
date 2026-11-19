@@ -1,6 +1,6 @@
 {
-  "versionCode": 52,
-  "versionName": "6.0",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.0/VideoSplitter-6.0.apk",
-  "notes": "弹窗全面现代化与主题色功能：主页预估确认、取消分割、上限选择、删除确认、授权引导等所有系统默认弹窗替换为与界面一致的玻璃弹窗；新增「主题色」入口，提供 8 种预设色板与 RGB 自定义滑条，主题色保存后主页、历史、删除、日志、播放器等所有页面同步换色；默认主题外观与上一版完全一致。分割/续传/导出/更新等功能逻辑不变，未新增平板双栏布局。"
+  "versionCode": 53,
+  "versionName": "6.1",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.1/VideoSplitter-6.1.apk",
+  "notes": "应用日志统一与重做：每条记录固定「时间/类别/级别/来源/启动ID/记录ID/内容」字段，类别与级别词表全模块统一（用户操作/分割/播放/删除/更新/通知/页面/设置/应用，信息/成功/警告/失败）；日志页改为卡片列表（最新在前），新增筛选芯片与已显示计数，点卡片看字段详情，支持导出统一格式文本；旧日志自动兼容恢复。分割、续传、导出、主题色与更新等功能逻辑不变。"
 }

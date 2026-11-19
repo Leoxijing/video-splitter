@@ -18,24 +18,25 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Original cleanup**: second-level page with thumbnails and checkboxes; deletes directly (including recycle-bin leftovers)
 - **History thumbnails**: each split-history record shows the first frame of its video — tap to play all segments in sequence
 - **In-app update**: check → download → system install session for one-tap upgrade
+- **App logs**: unified fields (time / category / level / source / launch ID / record ID / content), newest-first cards with category and failure filters, export and clear
 - **Full changelog in-app**: an "Update Log" page renders the complete version history offline
 - **Frosted-glass light-purple theme**
 
 ## Changelog
 
-### 🚀 v6.0 (latest · versionCode 52)
+### 🚀 v6.1 (latest · versionCode 53)
+
+- **Unified log format**: every entry carries time / category / level / source / launch ID / record ID / content; category and level use fixed vocabularies shared by all modules
+- **Log page redesigned**: newest-first cards with level and category badges, time + source, record ID; filter chips (all / this launch / user action / split / playback / delete / update / notification / failures only) and an "N/M entries" counter
+- **Detail & export**: tap a card for field details; exported text is uniformly "#recordID time [category/level/source] content", newest first
+- **Legacy compatible**: old plain-text logs are parsed and restored without loss; split/resume/export/theme/update logic unchanged
+
+### v6.0 (versionCode 52)
 
 - **Dialogs modernized**: the split confirmation (with "Resume last"), cancel, size-limit picker, custom limit, delete confirmations, permission prompts and install fallback all replaced with glass-card dialogs; destructive actions get a red primary button
 - **Theme color**: new "Theme color" entry on the home page with 8 preset palettes and RGB sliders (live preview); the choice persists and every page plus the player recolors instantly, with one-tap restore to default
 - **Stable default theme**: without customization the original purple palette is kept, identical to the previous release
 - **Everything else unchanged**: split/pause/resume/export/in-app-update logic untouched; single-column layout kept, no tablet dual-pane
-
-### v5.9 (versionCode 51)
-
-- **Progress panel redesigned**: a phase badge (status dot + label) beside the large percentage, with the gradient bar, 0%/100% scale and a phase-colored detail accent stacked below; long file names wrap to two lines and truncate
-- **Color & motion**: bar, badge and percentage recolor by phase (amber paused / green done / red cancelled or failed), 220ms smooth progress animation, fade-in/out on phase changes and card visibility
-- **Responsive**: larger padding, type and bar height on wide screens; single-column layout kept, no tablet dual-pane
-- **Data & features unchanged**: status text, progress values, pause/cancel/resume/export/in-app-update logic are all untouched — display layer only
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
