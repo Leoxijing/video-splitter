@@ -1,6 +1,6 @@
 {
-  "versionCode": 59,
-  "versionName": "6.7",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.7/VideoSplitter-6.7.apk",
-  "notes": "修复断点续传从错误位置续切导致片段内容重叠的问题；每个视频切完自动核对片段总时长；有片段失败时不再显示为已完成，未超上限的视频单独计为跳过；新增结果页与历史页的批量分享；FileProvider 收窄为仅更新包与导出目录；存在未导出片段时阻止删除原视频。"
+  "versionCode": 60,
+  "versionName": "6.8",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.8/VideoSplitter-6.8.apk",
+  "notes": "修复下载新版本时超级岛不显示或进度不动的问题：下载服务此前从未附加超级岛参数，现首帧即带岛，并按「百分比变化 + 最小 300ms」双重节流刷新，100% 强制更新。更新日志页支持联网刷新，展示 v1.0 起全部版本记录，并补充加载中、无网络、获取失败、远端无数据四类状态与重试；内置副本同步为全量，离线可看全部历史。"
 }
