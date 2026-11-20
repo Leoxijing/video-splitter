@@ -1,6 +1,6 @@
 {
-  "versionCode": 56,
-  "versionName": "6.4",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.4/VideoSplitter-6.4.apk",
-  "notes": "分割进度通知接入小米超级岛：支持的小米设备上以岛样式展示进度、状态与暂停/取消按钮，息屏与状态栏同步；不支持的设备自动退化为普通通知。分割逻辑与全部功能不变。"
+  "versionCode": 57,
+  "versionName": "6.5",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.5/VideoSplitter-6.5.apk",
+  "notes": "悬浮菜单与弹窗改为毛玻璃：真背景模糊、柔和层次、清晰可读；主题色协调性优化（柔和渐变派生、深色主按钮对比度）；系统深浅色切换后各页自动重建。已在小米 18 Pro Max 真机实测通过，功能逻辑不变。"
 }

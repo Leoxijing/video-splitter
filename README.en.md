@@ -25,13 +25,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.4 (latest · versionCode 56)
+### 🚀 v6.5 (latest · versionCode 57)
 
-- **Xiaomi Super Island**: split progress notifications now carry HyperOS Super Island (focus notification) parameters — capsule shows the app icon; expanded shows status, percentage, details and a theme-colored progress bar, with pause/resume and cancel buttons on the island; AOD and status-bar text stay in sync
-- **Safe fallback**: on non-Xiaomi devices, unsupported OS versions or when focus-notification permission is off, it degrades to the regular progress notification with zero side effects
-- **Progress logic unchanged**: update cadence, pause/cancel behavior and the foreground service are untouched; implemented against Xiaomi's public developer guide, no third-party code
+- **Frosted-glass floating menus**: home tiles and cards switch from translucent fills to real frosted glass — the page background is blurred and sampled aligned to each card's position, refreshing while scrolling, with a soft tint and highlight stroke
+- **True dialog backdrop blur**: glass dialogs enable system-level FLAG_BLUR_BEHIND (API 31+), blurring the page behind them in real time; card fills are more translucent while text stays crisp
+- **Theme color harmony**: custom-theme page gradients derive from the base hue at fixed lightness; the dark-mode primary button uses a mid-dark variant for clear white-on-color contrast (default theme unchanged)
+- **Dark/light switch handling**: pages rebuild automatically on resume after the system dark/light mode changes in the background
+- **Device-tested**: verified on Xiaomi 18 Pro Max (HyperOS 4.0 / Android 17) — install, launch, page navigation, dialogs, theme switching and dark/light toggling all pass with zero crashes or ANRs; feature logic unchanged
 
-### v6.3 (versionCode 55)
+### v6.4 (versionCode 56)
 
 - **Progress panel moved up**: the progress card now sits right below the primary CTA, with the tile grid after progress and results — split status is visible first
 - **Tile icon redesign**: the stretched oval icon background becomes a fixed 46dp rounded square (15dp radius, squircle-style), soft and consistent
