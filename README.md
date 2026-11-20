@@ -25,27 +25,21 @@
 
 ## 更新日志
 
-### 🚀 v6.5（最新 · versionCode 57）
+### 🚀 v6.6（最新 · versionCode 58）
+
+- **修复「Android 应用兼容性」弹窗**：启动时系统不再提示「以下库未进行 16 KB 对齐」。旧版 ffmpeg 封装库的 9 个 arm64 原生库按 4 KB 对齐（`p_align=0x1000`），Android 15+ / HyperOS 会在安装或启动时扫描并对未对齐项弹出兼容性提示
+- **影响范围**：当前设备页大小为 4 KB，旧库仍可正常加载，APP 功能一直正常，该弹窗属前瞻性兼容告警；但在 16 KB 页内核的设备上，4 KB 对齐的库会加载失败
+- **修复方式（接口不变）**：依赖更换为**公开 API 完全一致**的维护构建 `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`（同为 FFmpeg 6.0 系列 / `min` 变体 / LGPL-3.0 / 同一传递依赖，32 个公开类 API 签名比对无差异），全部 10 个 arm64 原生库 PT_LOAD 段按 16 KB 对齐（`p_align=0x4000`），APK 内 ZIP 偏移亦对齐到 16 KB
+- **业务代码零改动**：仅改 `app/build.gradle.kts` 依赖坐标与注释，源码/资源/Manifest 未动；分割、暂停/续传、导出、SHA-256、应用内更新、主题、日志、通知逻辑保持原样
+- **校验通过**：编译成功、Lint 0 Error、aapt 版本号 58/6.6、逐库 ELF 对齐与 LOAD 段 vaddr/offset 同余校验全部通过；第三方来源、原作者署名与许可同步更新
+
+### v6.5（versionCode 57）
 
 - **悬浮菜单毛玻璃**：主页瓷片与卡片改为真·毛玻璃——模糊的页面背景按卡片位置实时对齐采样、滚动同步刷新，叠柔和 tint 与高光描边
 - **弹窗真背景模糊**：玻璃弹窗启用系统级 FLAG_BLUR_BEHIND（API 31+），悬浮时背后页面实时虚化，卡片半透明可读
 - **主题色协调**：自定义主题的页面渐变按基色相生成固定明度的柔和渐变；深色模式主按钮改用中等暗度变体，白字对比度提升（默认主题外观不变）
 - **深浅色切换适配**：系统深/浅色在后台切换后，各页面回前台自动重建，不再出现旧配色混合状态
 - **真机实测**：Xiaomi 18 Pro Max（HyperOS 4.0 / Android 17）安装/启动/切页/弹窗/主题切换/深浅色切换实测通过，无崩溃无 ANR，功能逻辑不变
-
-### v6.4（versionCode 56）
-
-- **进度区上移**：「进度」卡片调整到主页大按钮正下方，功能入口瓷片排在进度与结果之后，优先查看分割状态
-- **图标圆角重做**：瓷片图标底从被拉伸的椭圆改为固定 46dp 圆角方形（15dp 圆角，squircle 风格），圆角柔和统一
-- **间距统一**：瓷片行列间距与卡片、按钮同一节奏
-- **功能不变**：进度卡内部结构与数据逻辑未动，仍为单列布局，未新增平板双栏布局
-
-### v6.2（versionCode 54）
-
-- **主页信息架构重做**：标题卡与长按钮列表改为「Hero 大标题 + 徽标胶囊 + 大号主按钮 + 3 列图标瓷片网格」，入口一眼可辨、留白更均衡
-- **全局导航统一**：去掉系统动作栏，五个二级页统一为「圆形返回钮 + 大标题 + 副标题」自绘顶栏；新增 8 枚原创矢量图标随主题色着色
-- **组件精修**：卡片圆角 24dp 与更柔描边、结果区缩略图统一圆角、深色模式状态栏/背景自动适配
-- **功能不变**：仅视觉与导航层；分割/暂停/续传/导出/日志/主题色/更新逻辑未动，仍为单列布局，未新增平板双栏布局
 
 > 完整更新日记（v1.0 至今全部版本）见 [CHANGELOG.md](CHANGELOG.md)；APP 内也可通过「更新日志」查看。
 
@@ -66,13 +60,17 @@
 
 - **FFmpeg** — 提供无损视频切割（`-c copy` 流复制）核心能力
   - 来源链接：https://ffmpeg.org/
-  - 出处说明：通过 [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit) 的 `ffmpeg-kit-min` 变体调用（依赖声明见 `app/build.gradle.kts`）；版本随 `ffmpeg-kit-min:6.0-2` 打包（FFmpeg 6.0 系列）
+  - 出处说明：通过 ffmpeg-kit 的 `ffmpeg-kit-min` 变体调用（依赖声明见 `app/build.gradle.kts`）；版本随 `ffmpeg-kit-min:6.0.4` 打包（FFmpeg 6.0 系列）
   - 原作者署名：FFmpeg 开发团队（FFmpeg Team）
   - 许可：上游 LGPL-2.1-or-later；经 ffmpeg-kit 以 `--enable-version3` 构建，随包以 **LGPL-3.0** 分发
-- **ffmpeg-kit** — FFmpeg 的 Android 封装库（`com.arthenica:ffmpeg-kit-min:6.0-2`）
-  - 来源链接：https://github.com/arthenica/ffmpeg-kit
-  - 原作者署名：Tanersener（Arthenica）
-  - 许可：LGPL-3.0
+- **ffmpeg-kit** — FFmpeg 的 Android 封装库
+  - 上游来源链接：https://github.com/arthenica/ffmpeg-kit ，原作者署名：Tanersener（Arthenica），许可：LGPL-3.0
+  - 本版使用的构建：`dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`（Maven Central），来源链接：https://github.com/ffmpegkit-maintained/ffmpeg ，出处说明：上游项目于 2025 年归档后由社区维护的接续分支，保持 `com.arthenica.ffmpegkit` API 不变；维护者：Jokobee，许可：LGPL-3.0
+  - 更换原因：上游 6.0-2 的 arm64 原生库按 4 KB 对齐，不满足 Android 15+ 的 16 KB 页大小要求；6.0.4 的原生库全部按 16 KB 对齐
+- **libc++_shared.so** — 随上述 ffmpeg-kit 构建分发的 C++ 标准运行库
+  - 来源链接：https://github.com/llvm/llvm-project （随 Android NDK 分发）
+  - 原作者署名：LLVM Project / The Android Open Source Project
+  - 许可：Apache-2.0 WITH LLVM-exception
 - **smart-exception** — ffmpeg-kit 的传递依赖（`smart-exception-java` / `smart-exception-common:0.2.1`）
   - 来源链接：https://github.com/tanersener/smart-exception
   - 原作者署名：Tanersener

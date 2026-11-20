@@ -2,16 +2,17 @@
 
 本文件是 VideoSplitter（视频分割）APP 的第三方组件清单与许可声明，随 APP 分发并在应用内「更新日志 → 开源许可」中展示。
 
-- 适用版本：v5.4（versionCode 46）及以后
-- 核查方式：逐文件检查 `app/src` 代码与资源、`app/build.gradle.kts` 依赖声明，并用 Gradle `releaseRuntimeClasspath` 依赖树确认实际打包内容
+- 适用版本：v6.6（versionCode 58）及以后（v6.6 将 ffmpeg-kit 依赖换为 16 KB 对齐的维护构建，见下）
+- 核查方式：逐文件检查 `app/src` 代码与资源、`app/build.gradle.kts` 依赖声明，并用 Gradle `releaseRuntimeClasspath` 依赖树确认实际打包内容；v6.6 另逐库检查 APK 内 `.so` 的 ELF PT_LOAD 对齐与 ZIP 偏移
 - 结论：本项目未包含整段复制自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**图标路径数据**
 
 ## 一、随 APK 分发的第三方组件
 
 | 组件 | 版本 | 来源 | 原作者 | 许可 | 在本项目中的用途 |
 | --- | --- | --- | --- | --- | --- |
-| FFmpeg（libavcodec / libavformat / libavutil / libswresample / libswscale 等） | 随 ffmpeg-kit-min 6.0-2 打包（FFmpeg 6.0 系列） | https://ffmpeg.org/ | FFmpeg Team | 上游为 LGPL-2.1-or-later；经 ffmpeg-kit 以 `--enable-version3` 构建，随包以 **LGPL-3.0** 分发 | 无损切割（`-c copy` 流复制）与转封装 |
-| ffmpeg-kit（`com.arthenica:ffmpeg-kit-min:6.0-2`） | 6.0-2 | https://github.com/arthenica/ffmpeg-kit | Tanersener（Arthenica） | **LGPL-3.0** | FFmpeg 的 Android/JNI 封装与命令执行 |
+| FFmpeg（libavcodec / libavformat / libavutil / libswresample / libswscale 等） | 随 ffmpeg-kit-min 6.0.4 打包（FFmpeg 6.0 系列） | https://ffmpeg.org/ | FFmpeg Team | 上游为 LGPL-2.1-or-later；经 ffmpeg-kit 以 `--enable-version3` 构建，随包以 **LGPL-3.0** 分发 | 无损切割（`-c copy` 流复制）与转封装 |
+| ffmpeg-kit（本版使用 `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`） | 6.0.4 | 维护分支 https://github.com/ffmpegkit-maintained/ffmpeg ；上游 https://github.com/arthenica/ffmpeg-kit | 维护分支维护者 Jokobee；上游原作者 Tanersener（Arthenica） | **LGPL-3.0** | FFmpeg 的 Android/JNI 封装与命令执行；上游 2025 年归档后由社区接续维护，保持 `com.arthenica.ffmpegkit` API 不变，并将原生库改为 16 KB 对齐 |
+| libc++_shared.so（随上述 ffmpeg-kit 构建分发） | 随 Android NDK 版本 | https://github.com/llvm/llvm-project | LLVM Project / The Android Open Source Project | **Apache-2.0 WITH LLVM-exception** | C++ 标准运行库，ffmpeg-kit 原生库的运行依赖 |
 | smart-exception-java / smart-exception-common（`com.arthenica:smart-exception-*:0.2.1`） | 0.2.1 | https://github.com/tanersener/smart-exception | Tanersener | **BSD-3-Clause** | ffmpeg-kit 的传递依赖（内部异常封装） |
 | AndroidX / Jetpack：`androidx.core:core-ktx:1.13.1`、`androidx.core:core`、`androidx.annotation`、`androidx.collection`、`androidx.concurrent`、`androidx.interpolator`、`androidx.lifecycle`、`androidx.arch.core`、`androidx.profileinstaller`、`androidx.startup`、`androidx.tracing`、`androidx.versionedparcelable` 等 | 1.13.1 及其传递版本 | https://developer.android.com/jetpack/androidx | The Android Open Source Project / Google LLC | **Apache-2.0** | `FileProvider`（APK 安装授权）等基础组件 |
 | Kotlin 标准库：`org.jetbrains.kotlin:kotlin-stdlib`、`kotlin-stdlib-common`、`org.jetbrains:annotations` | 1.9.24 / 13.0 | https://kotlinlang.org/ | JetBrains s.r.o. | **Apache-2.0** | Kotlin 运行时 |
@@ -30,11 +31,14 @@
 1. **未修改**：本项目未修改 FFmpeg、ffmpeg-kit 及 smart-exception 的任何源码或二进制，仅通过公开 API 调用。
 2. **可替换性**：FFmpeg 以动态库（`.so`）形式随 APK 打包，Java/Kotlin 层通过 ffmpeg-kit 的公开 JNI 接口调用。需要替换库的用户可自行获取对应 AAR 或从源码重新构建 APK；本项目不限制此类替换，也不使用阻止替换的技术措施。
 3. **源码获取**：
-   - ffmpeg-kit：https://github.com/arthenica/ffmpeg-kit （含 `min` 变体的构建脚本）
+   - ffmpeg-kit 上游：https://github.com/arthenica/ffmpeg-kit （含 `min` 变体的构建脚本，项目已于 2025 年归档）
+   - ffmpeg-kit 本版维护分支：https://github.com/ffmpegkit-maintained/ffmpeg （含构建脚本与许可说明）
    - FFmpeg：https://ffmpeg.org/download.html 与 https://git.ffmpeg.org/ffmpeg.git
-   - AAR 坐标：`com.arthenica:ffmpeg-kit-min:6.0-2`（Maven Central）
-4. **许可文本**：LGPL-3.0 全文链接见上；如需离线副本，可从上述官方地址获取。
+   - libc++：https://github.com/llvm/llvm-project （随 Android NDK 分发）
+   - AAR 坐标：`dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`（Maven Central）；v6.5 及更早为 `com.arthenica:ffmpeg-kit-min:6.0-2`
+4. **许可文本**：LGPL-3.0 全文链接见上；如需离线副本，可从上述官方地址获取。libc++ 适用 Apache-2.0 WITH LLVM-exception（全文 https://www.apache.org/licenses/LICENSE-2.0 与 https://llvm.org/LICENSE.txt ）。
 5. **无 GPL 组件**：使用的是 `min` 变体（不含 `-gpl` 后缀），未启用 `--enable-gpl`，不包含 GPL 授权的 FFmpeg 组件。
+6. **16 KB 对齐**：v6.6 起，APK 内全部 arm64 原生库的 ELF PT_LOAD 段按 16 KB 对齐（`p_align=0x4000`），且未压缩 `.so` 在 APK 内的 ZIP 偏移对齐到 16 KB 边界，满足 Android 15+ 对 16 KB 页大小设备的要求。此前版本的 4 KB 对齐库仅能在 4 KB 页内核上加载。
 
 ## 三、图标与视觉资源
 
@@ -56,7 +60,7 @@ Android SDK、Gradle、Kotlin 编译器、Android Gradle Plugin、Pillow 等仅�
 ## 六、仍需确认的事项
 
 1. 项目自身许可证尚未确定（无 `LICENSE` 文件），见第五节。
-2. FFmpeg 精确版本号：`ffmpeg-kit-min:6.0-2` 对应 FFmpeg 6.0 系列；若需逐位精确（如 6.0.x），可在设备上执行 `ffmpeg -version` 或查阅 AAR 内版本字符串确认。
+2. FFmpeg 精确版本号：`ffmpeg-kit-min:6.0.4` 对应 FFmpeg 6.0 系列；若需逐位精确（如 6.0.x），可在设备上执行 `ffmpeg -version` 或查阅 AAR 内版本字符串确认。
 3. LGPL 合规是否需要额外提供源码离线包（当前提供上游链接与 Maven 坐标）。
 4. 本项目源码目前未在 GitHub 公开（仓库仅含文档与版本信息），因此「可替换库」依赖用户自行从 Maven 获取 AAR 重建；如需更完整的合规体验，可考虑公开源码或提供未签名构建说明。
 5. AI 生成代码的相似性无法完全排除：已逐文件核查未发现整段复制痕迹，若后续发现与某开源项目高度相似，应按同一规则补充署名。

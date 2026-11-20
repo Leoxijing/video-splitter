@@ -25,27 +25,21 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.5 (latest · versionCode 57)
+### 🚀 v6.6 (latest · versionCode 58)
+
+- **Fixed the "Android app compatibility" dialog**: the system no longer shows "the following libraries are not 16 KB aligned" on launch. The previous ffmpeg wrapper shipped 9 arm64 native libraries aligned at 4 KB (`p_align=0x1000`); Android 15+ / HyperOS scans native libraries at install/launch and warns about unaligned ones
+- **Scope**: the current device uses 4 KB pages, so the old libraries still load and the app always worked — the dialog is a forward-compatibility warning, not a crash. On devices with a 16 KB-page kernel, 4 KB-aligned libraries fail to load
+- **Fix (API unchanged)**: the dependency is now `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`, a build with an **identical public API** (same FFmpeg 6.0 series / `min` variant / LGPL-3.0 / same transitive dependency; all 32 public classes compared signature-by-signature with no differences). All 10 arm64 native libraries have PT_LOAD segments aligned at 16 KB (`p_align=0x4000`), and uncompressed `.so` ZIP offsets are 16 KB aligned too
+- **Zero business-code changes**: only the dependency coordinate and comments in `app/build.gradle.kts` changed; sources, resources and Manifest are untouched. Splitting, pause/resume, export, SHA-256, in-app update, theme, logs and notifications behave exactly as before
+- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 58/6.6, per-library ELF alignment and LOAD vaddr/offset congruence checks all pass; third-party sources, author attribution and licenses updated accordingly
+
+### v6.5 (versionCode 57)
 
 - **Frosted-glass floating menus**: home tiles and cards switch from translucent fills to real frosted glass — the page background is blurred and sampled aligned to each card's position, refreshing while scrolling, with a soft tint and highlight stroke
 - **True dialog backdrop blur**: glass dialogs enable system-level FLAG_BLUR_BEHIND (API 31+), blurring the page behind them in real time; card fills are more translucent while text stays crisp
 - **Theme color harmony**: custom-theme page gradients derive from the base hue at fixed lightness; the dark-mode primary button uses a mid-dark variant for clear white-on-color contrast (default theme unchanged)
 - **Dark/light switch handling**: pages rebuild automatically on resume after the system dark/light mode changes in the background
 - **Device-tested**: verified on Xiaomi 18 Pro Max (HyperOS 4.0 / Android 17) — install, launch, page navigation, dialogs, theme switching and dark/light toggling all pass with zero crashes or ANRs; feature logic unchanged
-
-### v6.4 (versionCode 56)
-
-- **Progress panel moved up**: the progress card now sits right below the primary CTA, with the tile grid after progress and results — split status is visible first
-- **Tile icon redesign**: the stretched oval icon background becomes a fixed 46dp rounded square (15dp radius, squircle-style), soft and consistent
-- **Unified spacing**: tile grid spacing follows the same rhythm as cards and buttons
-- **Everything else unchanged**: progress card internals and data logic untouched, single-column layout kept, no tablet dual-pane
-
-### v6.2 (versionCode 54)
-
-- **Home information architecture rebuilt**: the title card and long button list become a hero headline + badge pill + large primary CTA + a 3-column icon tile grid; entries are scannable at a glance with balanced whitespace
-- **Unified navigation**: the system action bar is removed; five secondary pages share one self-drawn top bar (circular back button + large title + subtitle); 8 original vector icons tinted by theme color
-- **Component polish**: 24dp card radius with softer strokes, uniformly rounded thumbnails in the results area, dark-mode status bar/background auto adaptation
-- **Everything else unchanged**: display/navigation only; split/pause/resume/export/logs/theme/update logic untouched, single-column layout kept, no tablet dual-pane
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
@@ -66,13 +60,17 @@ This app uses or references the following third-party projects. Source links, pr
 
 - **FFmpeg** — provides the core lossless video splitting (`-c copy` stream copy)
   - Source: https://ffmpeg.org/
-  - Provenance: invoked via the `ffmpeg-kit-min` variant of [ffmpeg-kit](https://github.com/arthenica/ffmpeg-kit) (see the dependency in `app/build.gradle.kts`); version bundled with `ffmpeg-kit-min:6.0-2` (FFmpeg 6.0 series)
+  - Provenance: invoked via the `ffmpeg-kit-min` variant of ffmpeg-kit (see the dependency in `app/build.gradle.kts`); version bundled with `ffmpeg-kit-min:6.0.4` (FFmpeg 6.0 series)
   - Original author: The FFmpeg Team
   - License: upstream LGPL-2.1-or-later; built by ffmpeg-kit with `--enable-version3` and distributed as **LGPL-3.0**
-- **ffmpeg-kit** — Android wrapper library for FFmpeg (`com.arthenica:ffmpeg-kit-min:6.0-2`)
-  - Source: https://github.com/arthenica/ffmpeg-kit
-  - Original author: Tanersener (Arthenica)
-  - License: LGPL-3.0
+- **ffmpeg-kit** — Android wrapper library for FFmpeg
+  - Upstream source: https://github.com/arthenica/ffmpeg-kit ; original author: Tanersener (Arthenica); license: LGPL-3.0
+  - Build used in this version: `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4` (Maven Central), source: https://github.com/ffmpegkit-maintained/ffmpeg ; provenance: a community-maintained continuation after the upstream project was archived in 2025, keeping the `com.arthenica.ffmpegkit` API unchanged; maintainer: Jokobee; license: LGPL-3.0
+  - Reason for the switch: the upstream 6.0-2 arm64 libraries are 4 KB aligned and do not meet the Android 15+ 16 KB page-size requirement; all libraries in 6.0.4 are 16 KB aligned
+- **libc++_shared.so** — C++ standard runtime distributed with the ffmpeg-kit build above
+  - Source: https://github.com/llvm/llvm-project (shipped with the Android NDK)
+  - Original author: LLVM Project / The Android Open Source Project
+  - License: Apache-2.0 WITH LLVM-exception
 - **smart-exception** — transitive dependency of ffmpeg-kit (`smart-exception-java` / `smart-exception-common:0.2.1`)
   - Source: https://github.com/tanersener/smart-exception
   - Original author: Tanersener
