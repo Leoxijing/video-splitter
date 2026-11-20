@@ -27,23 +27,24 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.8 (latest · versionCode 60)
+### 🚀 v6.9 (latest · versionCode 61)
+
+- **Home rebuilt**: the title now sits in a theme-colored gradient panel carrying a version pill, headline and description; the primary button uses a diagonal gradient with elevation plus a one-line capability hint; new section headers with an accent bar and fading rule split the page into "primary action / progress / tools", fixing the flat, layered-free look
+- **Tools reworked**: the three-column text grid becomes two-column info tiles (gradient icon bed + title + one-line description), denser and easier to scan; "Clean up originals" becomes a bottom bar entry that closes the page instead of occupying a full row
+- **Progress panel**: the whole block collapses when idle and only appears for splitting, exporting, downloading, paused, completed or failed states; padding, percentage size and bar height are tightened and the 0%/100% marks removed, cutting height from about 180dp to about 130dp
+- **Stable state switching**: show/hide only runs on real transitions, so stage advances (prepare → split → export → done) do not re-fade; showing fades in, hiding collapses directly, with no layout jitter
+- **Completion misjudged as failure fixed**: the success text "成功 N 个，失败 0 个" contains the word for failure and was matched by a keyword, painting the badge and check mark red; failure is now detected only via the `!` marker, so completion shows a green "completed"
+- **App icon redesigned**: theme-purple diagonal gradient with a top-left glow, foreground is two offset white rounded video blocks with a play triangle cut out of the left one, meaning "one video split into two"; never clipped under circular or rounded masks
+- **Device check**: on Xiaomi 18 Pro Max (Android 17 / HyperOS) verified idle hiding, the running progress panel (47%), the two-column tiles and bottom bar layout, and the icon under the system app-info page's rounded mask
+- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 61/6.9
+
+### v6.8 (versionCode 60)
 
 - **Download progress on the Super Island**: fixed the island not appearing for update downloads, or freezing at its first value. The download service never attached the island parameters (`miui.focus.param`) before — only the split notification did. The first notification now carries them, and every refresh rebuilds the notification and re-attaches the current progress
 - **Throttled, accurate refresh**: progress updates use a double throttle — percentage change plus a 300 ms minimum interval — with 100% always flushed. Updates that are too dense get rate-limited by the system, which made the island stick at an old value. Without `Content-Length` the island shows an indeterminate "downloading" state
 - **Changelog refreshed online**: the update-log page now shows a local first screen and refreshes from the remote repository, caching the full `CHANGELOG.md` and listing every version since v1.0; a status bar shows the current source and version count
 - **States and fallback**: adding loading, no-network, fetch-failure and empty-remote states with a manual refresh entry; the remote is tried via raw link then CDN, and failures keep the local record visible
-- **Full history restored**: `CHANGELOG.md` and the in-app copy are restored to the complete record since v1.0 (58 versions), readable offline; the README changelog still keeps only the latest two releases
-- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 60/6.8
-
-### v6.7 (versionCode 59)
-
-- **Resume fixed**: the resume offset now accumulates every kept segment's duration. It previously took only the last segment, so restarting after several segments re-cut content already produced, yielding overlapping clips
-- **Integrity check**: after splitting, segment durations are summed and compared with the source (2% + 3 s tolerance); a mismatch is logged with a prompt to spot-check, and a passing run records segment count. Videos below the limit are counted as "skipped" instead of success
-- **Result state fixed**: a run with failed segments no longer shows a check mark or a green "completed"; when every selected video is below the limit the app states there is nothing to split
-- **Lifecycle and concurrency**: the main screen no longer rebuilds on rotation; UI updates go through a liveness check; the global statistics callback is unregistered when a task ends; notification pause/resume keeps the on-screen text in sync
-- **Share closed loop**: the result card can share all clips at once, and history's manage mode can share selected clips through the system share sheet with multiple files
-- **Storage and delete safety**: FileProvider is narrowed to the update package and export directory only; update packages live under `update/`; deleting the original is blocked while any clip failed to export; the cleanup page offers a tappable re-authorization entry when permission is missing
+- **Full history restored**: `CHANGELOG.md` and the in-app copy are restored to the complete record since v1.0, readable offline; the README changelog still keeps only the latest two releases
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
