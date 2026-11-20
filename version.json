@@ -1,6 +1,6 @@
 {
-  "versionCode": 53,
-  "versionName": "6.1",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.1/VideoSplitter-6.1.apk",
-  "notes": "应用日志统一与重做：每条记录固定「时间/类别/级别/来源/启动ID/记录ID/内容」字段，类别与级别词表全模块统一（用户操作/分割/播放/删除/更新/通知/页面/设置/应用，信息/成功/警告/失败）；日志页改为卡片列表（最新在前），新增筛选芯片与已显示计数，点卡片看字段详情，支持导出统一格式文本；旧日志自动兼容恢复。分割、续传、导出、主题色与更新等功能逻辑不变。"
+  "versionCode": 54,
+  "versionName": "6.2",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.2/VideoSplitter-6.2.apk",
+  "notes": "界面整体现代化：主页改为「Hero 大标题 + 徽标胶囊 + 大号主按钮 + 3 列图标瓷片网格」；五个二级页统一为自绘顶栏（圆形返回钮 + 大标题 + 副标题），去掉系统动作栏；新增 8 枚原创矢量图标并随主题色着色；卡片圆角与描边精修、结果区缩略图统一圆角；深色模式状态栏/背景自动适配。分割、暂停、续传、导出、日志、主题色与更新等功能逻辑不变。"
 }

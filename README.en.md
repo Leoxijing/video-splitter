@@ -11,6 +11,7 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Split by size limit**: default 3.8 GB per segment; segment duration is derived from the actual bitrate
 - **Lossless cutting**: ffmpeg `-c copy` stream copy — no re-encoding, no quality loss
 - **Automatic re-split**: 5% safety margin; oversized segments are re-cut with a shorter duration
+- **Modern UI**: hero header with icon-tile navigation, a unified self-drawn top bar (circular back button + large title), original vector icons tinted by the user's theme color, full dark-mode support
 - **Live progress**: phase badge, large percentage, rounded gradient bar with 0%/100% scale, phase-aware colors and smooth transitions
 - **Theme color**: 8 preset palettes + RGB sliders, synced across home/history/cleanup/logs/player
 - **Segment preview**: thumbnails grouped separately from the original video; tap a row to open the player (double-tap play/pause, swipe to seek, fullscreen at bottom-right)
@@ -24,7 +25,14 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.1 (latest · versionCode 53)
+### 🚀 v6.2 (latest · versionCode 54)
+
+- **Home information architecture rebuilt**: the title card and long button list become a hero headline + badge pill + large primary CTA + a 3-column icon tile grid; entries are scannable at a glance with balanced whitespace
+- **Unified navigation**: the system action bar is removed; five secondary pages share one self-drawn top bar (circular back button + large title + subtitle); 8 original vector icons tinted by theme color
+- **Component polish**: 24dp card radius with softer strokes, uniformly rounded thumbnails in the results area, dark-mode status bar/background auto adaptation
+- **Everything else unchanged**: display/navigation only; split/pause/resume/export/logs/theme/update logic untouched, single-column layout kept, no tablet dual-pane
+
+### v6.1 (versionCode 53)
 
 - **Unified log format**: every entry carries time / category / level / source / launch ID / record ID / content; category and level use fixed vocabularies shared by all modules
 - **Log page redesigned**: newest-first cards with level and category badges, time + source, record ID; filter chips (all / this launch / user action / split / playback / delete / update / notification / failures only) and an "N/M entries" counter
