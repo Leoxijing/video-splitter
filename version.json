@@ -1,6 +1,6 @@
 {
-  "versionCode": 55,
-  "versionName": "6.3",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.3/VideoSplitter-6.3.apk",
-  "notes": "进度区上移到主页大按钮正下方，优先展示分割阶段与百分比；瓷片图标底重做为固定 46dp 圆角方形（squircle 风格），圆角柔和统一；间距节奏统一。功能与数据逻辑不变。"
+  "versionCode": 56,
+  "versionName": "6.4",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.4/VideoSplitter-6.4.apk",
+  "notes": "分割进度通知接入小米超级岛：支持的小米设备上以岛样式展示进度、状态与暂停/取消按钮，息屏与状态栏同步；不支持的设备自动退化为普通通知。分割逻辑与全部功能不变。"
 }

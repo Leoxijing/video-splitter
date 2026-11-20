@@ -25,7 +25,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.3 (latest · versionCode 55)
+### 🚀 v6.4 (latest · versionCode 56)
+
+- **Xiaomi Super Island**: split progress notifications now carry HyperOS Super Island (focus notification) parameters — capsule shows the app icon; expanded shows status, percentage, details and a theme-colored progress bar, with pause/resume and cancel buttons on the island; AOD and status-bar text stay in sync
+- **Safe fallback**: on non-Xiaomi devices, unsupported OS versions or when focus-notification permission is off, it degrades to the regular progress notification with zero side effects
+- **Progress logic unchanged**: update cadence, pause/cancel behavior and the foreground service are untouched; implemented against Xiaomi's public developer guide, no third-party code
+
+### v6.3 (versionCode 55)
 
 - **Progress panel moved up**: the progress card now sits right below the primary CTA, with the tile grid after progress and results — split status is visible first
 - **Tile icon redesign**: the stretched oval icon background becomes a fixed 46dp rounded square (15dp radius, squircle-style), soft and consistent
