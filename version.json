@@ -1,6 +1,6 @@
 {
-  "versionCode": 58,
-  "versionName": "6.6",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.6/VideoSplitter-6.6.apk",
-  "notes": "修复启动时系统弹出的「Android 应用兼容性：以下库未进行 16 KB 对齐」提示。根因是旧版 ffmpeg 封装库的 arm64 原生库按 4 KB 对齐；现将依赖更换为公开 API 完全一致的 16 KB 对齐构建，全部原生库已通过 ELF 与 ZIP 双项对齐校验。业务代码零改动，分割/暂停/续传/导出等功能逻辑不变。"
+  "versionCode": 59,
+  "versionName": "6.7",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.7/VideoSplitter-6.7.apk",
+  "notes": "修复断点续传从错误位置续切导致片段内容重叠的问题；每个视频切完自动核对片段总时长；有片段失败时不再显示为已完成，未超上限的视频单独计为跳过；新增结果页与历史页的批量分享；FileProvider 收窄为仅更新包与导出目录；存在未导出片段时阻止删除原视频。"
 }

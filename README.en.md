@@ -21,25 +21,28 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **In-app update**: check → download → system install session for one-tap upgrade
 - **App logs**: unified fields (time / category / level / source / launch ID / record ID / content), newest-first cards with category and failure filters, export and clear
 - **Full changelog in-app**: an "Update Log" page renders the complete version history offline
+- **Batch sharing**: share all clips from the result card, or selected clips from history's manage mode, through the system share sheet
+- **Split self-check**: segment durations are summed and compared with the source after each run; a mismatch is logged with a prompt to spot-check
 - **Frosted-glass light-purple theme**
 
 ## Changelog
 
-### 🚀 v6.6 (latest · versionCode 58)
+### 🚀 v6.7 (latest · versionCode 59)
 
-- **Fixed the "Android app compatibility" dialog**: the system no longer shows "the following libraries are not 16 KB aligned" on launch. The previous ffmpeg wrapper shipped 9 arm64 native libraries aligned at 4 KB (`p_align=0x1000`); Android 15+ / HyperOS scans native libraries at install/launch and warns about unaligned ones
-- **Scope**: the current device uses 4 KB pages, so the old libraries still load and the app always worked — the dialog is a forward-compatibility warning, not a crash. On devices with a 16 KB-page kernel, 4 KB-aligned libraries fail to load
-- **Fix (API unchanged)**: the dependency is now `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`, a build with an **identical public API** (same FFmpeg 6.0 series / `min` variant / LGPL-3.0 / same transitive dependency; all 32 public classes compared signature-by-signature with no differences). All 10 arm64 native libraries have PT_LOAD segments aligned at 16 KB (`p_align=0x4000`), and uncompressed `.so` ZIP offsets are 16 KB aligned too
-- **Zero business-code changes**: only the dependency coordinate and comments in `app/build.gradle.kts` changed; sources, resources and Manifest are untouched. Splitting, pause/resume, export, SHA-256, in-app update, theme, logs and notifications behave exactly as before
-- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 58/6.6, per-library ELF alignment and LOAD vaddr/offset congruence checks all pass; third-party sources, author attribution and licenses updated accordingly
+- **Resume fixed**: the resume offset now accumulates every kept segment's duration. It previously took only the last segment, so restarting after several segments re-cut content already produced, yielding overlapping clips
+- **Integrity check**: after splitting, segment durations are summed and compared with the source (2% + 3 s tolerance); a mismatch is logged with a prompt to spot-check, and a passing run records segment count. Videos below the limit are counted as "skipped" instead of success
+- **Result state fixed**: a run with failed segments no longer shows a check mark or a green "completed"; when every selected video is below the limit the app states there is nothing to split
+- **Lifecycle and concurrency**: the main screen no longer rebuilds on rotation; UI updates go through a liveness check; the global statistics callback is unregistered when a task ends; notification pause/resume keeps the on-screen text in sync
+- **Share closed loop**: the result card can share all clips at once, and history's manage mode can share selected clips through the system share sheet with multiple files
+- **Storage and delete safety**: FileProvider is narrowed to the update package and export directory only; update packages live under `update/`; deleting the original is blocked while any clip failed to export; the cleanup page offers a tappable re-authorization entry when permission is missing
+- **Detail fixes**: re-cut clips are recognized by history and cleanup; a failing clip skips to the next instead of closing the player; tick resumes on foreground; clearing logs asks for confirmation; logging initializes at process start
+- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 59/6.7
 
-### v6.5 (versionCode 57)
+### v6.6 (versionCode 58)
 
-- **Frosted-glass floating menus**: home tiles and cards switch from translucent fills to real frosted glass — the page background is blurred and sampled aligned to each card's position, refreshing while scrolling, with a soft tint and highlight stroke
-- **True dialog backdrop blur**: glass dialogs enable system-level FLAG_BLUR_BEHIND (API 31+), blurring the page behind them in real time; card fills are more translucent while text stays crisp
-- **Theme color harmony**: custom-theme page gradients derive from the base hue at fixed lightness; the dark-mode primary button uses a mid-dark variant for clear white-on-color contrast (default theme unchanged)
-- **Dark/light switch handling**: pages rebuild automatically on resume after the system dark/light mode changes in the background
-- **Device-tested**: verified on Xiaomi 18 Pro Max (HyperOS 4.0 / Android 17) — install, launch, page navigation, dialogs, theme switching and dark/light toggling all pass with zero crashes or ANRs; feature logic unchanged
+- **Fixed the "Android app compatibility" dialog**: the system no longer shows "the following libraries are not 16 KB aligned" on launch. The previous ffmpeg wrapper shipped 9 arm64 native libraries aligned at 4 KB; Android 15+ / HyperOS scans native libraries at install/launch and warns about unaligned ones
+- **Fix (API unchanged)**: the dependency is now `dev.ffmpegkit-maintained:ffmpeg-kit-min:6.0.4`, a build with an **identical public API** (same FFmpeg 6.0 series / `min` variant / LGPL-3.0). All 10 arm64 native libraries have PT_LOAD segments aligned at 16 KB (`p_align=0x4000`), and uncompressed `.so` ZIP offsets are 16 KB aligned too
+- **Zero business-code changes**: only the dependency coordinate and comments in `app/build.gradle.kts` changed; splitting, pause/resume, export, SHA-256, in-app update, theme, logs and notifications behave exactly as before
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
