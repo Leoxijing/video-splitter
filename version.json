@@ -1,6 +1,6 @@
 {
-  "versionCode": 54,
-  "versionName": "6.2",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.2/VideoSplitter-6.2.apk",
-  "notes": "界面整体现代化：主页改为「Hero 大标题 + 徽标胶囊 + 大号主按钮 + 3 列图标瓷片网格」；五个二级页统一为自绘顶栏（圆形返回钮 + 大标题 + 副标题），去掉系统动作栏；新增 8 枚原创矢量图标并随主题色着色；卡片圆角与描边精修、结果区缩略图统一圆角；深色模式状态栏/背景自动适配。分割、暂停、续传、导出、日志、主题色与更新等功能逻辑不变。"
+  "versionCode": 55,
+  "versionName": "6.3",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.3/VideoSplitter-6.3.apk",
+  "notes": "进度区上移到主页大按钮正下方，优先展示分割阶段与百分比；瓷片图标底重做为固定 46dp 圆角方形（squircle 风格），圆角柔和统一；间距节奏统一。功能与数据逻辑不变。"
 }

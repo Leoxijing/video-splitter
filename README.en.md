@@ -25,26 +25,19 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.2 (latest · versionCode 54)
+### 🚀 v6.3 (latest · versionCode 55)
+
+- **Progress panel moved up**: the progress card now sits right below the primary CTA, with the tile grid after progress and results — split status is visible first
+- **Tile icon redesign**: the stretched oval icon background becomes a fixed 46dp rounded square (15dp radius, squircle-style), soft and consistent
+- **Unified spacing**: tile grid spacing follows the same rhythm as cards and buttons
+- **Everything else unchanged**: progress card internals and data logic untouched, single-column layout kept, no tablet dual-pane
+
+### v6.2 (versionCode 54)
 
 - **Home information architecture rebuilt**: the title card and long button list become a hero headline + badge pill + large primary CTA + a 3-column icon tile grid; entries are scannable at a glance with balanced whitespace
 - **Unified navigation**: the system action bar is removed; five secondary pages share one self-drawn top bar (circular back button + large title + subtitle); 8 original vector icons tinted by theme color
 - **Component polish**: 24dp card radius with softer strokes, uniformly rounded thumbnails in the results area, dark-mode status bar/background auto adaptation
 - **Everything else unchanged**: display/navigation only; split/pause/resume/export/logs/theme/update logic untouched, single-column layout kept, no tablet dual-pane
-
-### v6.1 (versionCode 53)
-
-- **Unified log format**: every entry carries time / category / level / source / launch ID / record ID / content; category and level use fixed vocabularies shared by all modules
-- **Log page redesigned**: newest-first cards with level and category badges, time + source, record ID; filter chips (all / this launch / user action / split / playback / delete / update / notification / failures only) and an "N/M entries" counter
-- **Detail & export**: tap a card for field details; exported text is uniformly "#recordID time [category/level/source] content", newest first
-- **Legacy compatible**: old plain-text logs are parsed and restored without loss; split/resume/export/theme/update logic unchanged
-
-### v6.0 (versionCode 52)
-
-- **Dialogs modernized**: the split confirmation (with "Resume last"), cancel, size-limit picker, custom limit, delete confirmations, permission prompts and install fallback all replaced with glass-card dialogs; destructive actions get a red primary button
-- **Theme color**: new "Theme color" entry on the home page with 8 preset palettes and RGB sliders (live preview); the choice persists and every page plus the player recolors instantly, with one-tap restore to default
-- **Stable default theme**: without customization the original purple palette is kept, identical to the previous release
-- **Everything else unchanged**: split/pause/resume/export/in-app-update logic untouched; single-column layout kept, no tablet dual-pane
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
