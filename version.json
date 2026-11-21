@@ -1,6 +1,6 @@
 {
-  "versionCode": 61,
-  "versionName": "6.9",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v6.9/VideoSplitter-6.9.apk",
-  "notes": "主页整体重构：渐变页头承载版本与标题、渐变主按钮加能力说明、分区标题切分页面节奏、工具区改为 2 列信息瓷片并新增底部清理横条；进度框空闲时自动隐藏、运行时紧凑显示，高度约降三成；修复分割成功却显示红色「失败」的完成态误判；重做 APP 图标（紫色渐变底 + 错位双视频块），并在真机核对界面与图标显示。"
+  "versionCode": 62,
+  "versionName": "7.0",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.0/VideoSplitter-7.0.apk",
+  "notes": "移除 HyperOS 超级岛私有依赖（miui.focus.*），改用纯 Android 标准通知实现状态栏进度：保留阶段、百分比、详情、进度条与暂停/继续/取消交互，原生安卓与各厂商系统行为一致；删除 HyperIsland.kt，新增 StatusBarProgress.kt。构建通过、Lint 0 Error。"
 }

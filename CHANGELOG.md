@@ -6,6 +6,13 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v7.0 (versionCode 62)
+- **移除 HyperOS 厂商私有依赖**：删除 `HyperIsland.kt` 及全部 `miui.focus.*` 私有参数（焦点通知 JSON、图标 Bundle、按钮 Bundle），不再读取设备厂商标识、不再写入任何厂商私有 extras；APP 现在只用 AOSP Notification API，原生 Android 与各厂商系统行为一致
+- **新增标准状态栏进度封装**：`StatusBarProgress.kt` 把超级岛能力逐项映射到标准通知——小岛胶囊 → 状态栏持续小图标 + 折叠态标题「阶段 · 百分比」，大岛展开态 → `BigTextStyle` 详情 + 系统进度条，主题色进度条 → `setColor(Ui.accent)`，ticker/AOD → `setTicker`，岛上按钮 → 标准 `Notification.Action` + `PendingIntent`；首次自动展开改为交给系统，不强制悬浮通知
+- **调用方改造**：分割服务与更新下载服务的进度通知、完成/失败通知全部改用新封装；触发时机、暂停/继续/取消交互、300ms 刷新节流、前台服务保活与锁屏可见（`VISIBILITY_PUBLIC`）均保持原样；进度刷新不再重复响铃震动（`setOnlyAlertOnce`）
+- **兼容性收益**：不再依赖厂商是否支持焦点通知、权限是否开启，任何 Android 13+ 设备上都能看到一致的阶段、百分比、详情与操作按钮，避免小米设备显示岛而其他设备退化的差异
+- **验证**：`assembleDebug` 通过、`lintDebug` 0 Error；APK DEX 扫描确认 `miui.focus` / `HyperIsland` 等私有标识零命中，`StatusBarProgress` / `setProgress` / `BigTextStyle` / `setVisibility` 均在包内；按本次要求未做 ADB 实机测试
+
 ## v6.9 (versionCode 61)
 - **主页整体重构**：标题不再裸露在渐变背景上，改为主题色渐变面板承载「版本胶囊 + 大标题 + 说明」；主按钮改为对角渐变 + 投影 + 一行能力说明；新增带竖条与渐隐细线的分区标题，把页面切成「主操作 / 进度 / 工具」三段，解决内容平铺、缺少层次的问题
 - **工具区改版**：3 列纯文字格子改为 2 列信息瓷片（渐变图标底 + 标题 + 一行说明），信息量更大、扫读更快；「清理原视频」改为底部横条入口（危险色图标 + 说明 + 箭头），收束页面而不再单独占满一行

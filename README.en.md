@@ -27,24 +27,21 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v6.9 (latest · versionCode 61)
+### 🚀 v7.0 (latest · versionCode 62)
 
-- **Home rebuilt**: the title now sits in a theme-colored gradient panel carrying a version pill, headline and description; the primary button uses a diagonal gradient with elevation plus a one-line capability hint; new section headers with an accent bar and fading rule split the page into "primary action / progress / tools", fixing the flat, layered-free look
-- **Tools reworked**: the three-column text grid becomes two-column info tiles (gradient icon bed + title + one-line description), denser and easier to scan; "Clean up originals" becomes a bottom bar entry that closes the page instead of occupying a full row
-- **Progress panel**: the whole block collapses when idle and only appears for splitting, exporting, downloading, paused, completed or failed states; padding, percentage size and bar height are tightened and the 0%/100% marks removed, cutting height from about 180dp to about 130dp
-- **Stable state switching**: show/hide only runs on real transitions, so stage advances (prepare → split → export → done) do not re-fade; showing fades in, hiding collapses directly, with no layout jitter
-- **Completion misjudged as failure fixed**: the success text "成功 N 个，失败 0 个" contains the word for failure and was matched by a keyword, painting the badge and check mark red; failure is now detected only via the `!` marker, so completion shows a green "completed"
-- **App icon redesigned**: theme-purple diagonal gradient with a top-left glow, foreground is two offset white rounded video blocks with a play triangle cut out of the left one, meaning "one video split into two"; never clipped under circular or rounded masks
-- **Device check**: on Xiaomi 18 Pro Max (Android 17 / HyperOS) verified idle hiding, the running progress panel (47%), the two-column tiles and bottom bar layout, and the icon under the system app-info page's rounded mask
-- **Verified**: build succeeds, Lint 0 errors, `aapt dump badging` reports 61/6.9
+- **Vendor-private dependency removed**: HyperIsland and every `miui.focus.*` parameter are gone — no vendor detection, no private extras, only AOSP Notification API; behaviour is identical on stock Android and every OEM skin
+- **Standard status-bar progress wrapper**: island capsule → persistent status-bar icon plus collapsed title "stage · percentage"; expanded island → `BigTextStyle` detail with the system progress bar; themed bar → `setColor`; island buttons → standard `Notification.Action`; first-show auto-expand is left to the system instead of forcing a heads-up
+- **Same timing and interactions**: split/download progress, pause/resume/cancel, 300 ms throttle, foreground keep-alive and lock-screen visibility are unchanged; progress refreshes no longer repeat sound or vibration
+- **Compatibility gain**: any Android 13+ device shows the same stage, percentage, detail and controls — no more island on Xiaomi versus degraded notification elsewhere
+- **Verified**: build succeeds, Lint 0 errors, zero vendor-private identifiers in the APK DEX
 
-### v6.8 (versionCode 60)
+### v6.9 (versionCode 61)
 
-- **Download progress on the Super Island**: fixed the island not appearing for update downloads, or freezing at its first value. The download service never attached the island parameters (`miui.focus.param`) before — only the split notification did. The first notification now carries them, and every refresh rebuilds the notification and re-attaches the current progress
-- **Throttled, accurate refresh**: progress updates use a double throttle — percentage change plus a 300 ms minimum interval — with 100% always flushed. Updates that are too dense get rate-limited by the system, which made the island stick at an old value. Without `Content-Length` the island shows an indeterminate "downloading" state
-- **Changelog refreshed online**: the update-log page now shows a local first screen and refreshes from the remote repository, caching the full `CHANGELOG.md` and listing every version since v1.0; a status bar shows the current source and version count
-- **States and fallback**: adding loading, no-network, fetch-failure and empty-remote states with a manual refresh entry; the remote is tried via raw link then CDN, and failures keep the local record visible
-- **Full history restored**: `CHANGELOG.md` and the in-app copy are restored to the complete record since v1.0, readable offline; the README changelog still keeps only the latest two releases
+- **Home rebuilt**: the title now sits in a theme-colored gradient panel; the primary button uses a diagonal gradient with elevation; new section headers split the page into "primary action / progress / tools"
+- **Tools reworked**: the three-column text grid becomes two-column info tiles, and "Clean up originals" becomes a bottom bar entry
+- **Progress panel**: collapses when idle, tightened padding and bar, 0%/100% marks removed
+- **Completion misjudged as failure fixed**: failure is now detected only via the `!` marker, so completion shows a green "completed"
+- **App icon redesigned**: purple gradient with two offset white video blocks and a cut-out play triangle
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
