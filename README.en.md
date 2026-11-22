@@ -27,20 +27,22 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.2 (latest · versionCode 64)
+### 🚀 v7.3 (latest · versionCode 65)
 
-- **Delete button pinned to top**: the bulk action bar moves from the end of the scrolling content to just below the title and summary, so the delete button stays visible while the list scrolls
-- **Horizontal action bar**: share and delete now sit side by side at half width each, taking about 46dp in manage mode and leaving more room for the list
-- **Behaviour unchanged**: delete confirmation, multi-select/select-all, batch delete, sharing and manage-mode state cleanup all work as before
-- **Layout split**: the page is now "fixed header (back bar + summary/manage + action bar) + independent scrolling list"
+- **Delete from the player**: opening a group from history now shows a delete action in the title bar, offering "delete this clip" or "delete the whole group"; it only appears for history entry, never when playing from the home result card
+- **Two-step confirmation**: pick the scope first, then confirm the file count and size, with a note that only the selected clips are affected
+- **Playback state handled**: deleting the current clip advances to the next one and refreshes the "N/M" title, deleting the last clip falls back to the new last one, and deleting the whole group exits the player
+- **Deleting the currently playing file works**: the player is released first (switch clip or exit) so the in-use file can be removed
+- **History stays in sync**: the list refreshes on return plus once more shortly after, so no deleted rows linger
+- **Hardened deletion**: a shared helper deletes via MediaStore first with path fallback and retry, and falls back to the system delete confirmation when the app lacks direct permission
+- **Tested**: MuMu emulator verified clip delete, whole-group delete, exit-on-empty and list sync, with other records untouched
 - **Verified**: build succeeds, Lint 0 errors
 
-### v7.1 (versionCode 63)
+### v7.2 (versionCode 64)
 
-- **Larger history thumbnails**: the first-frame thumbnail grows from 72dp to 96dp with a larger corner radius, making previews easier to recognise
-- **Single-line truncated titles**: source filenames no longer wrap to show in full; they stay on one line and ellipsize when too long, keeping card heights stable
-- **Scoped change**: only the history page presentation changed — grouping, continuous playback, manage mode multi-select and batch delete are untouched
-- **Verified**: build succeeds, Lint 0 errors
+- **Delete button pinned to top**: the bulk action bar moves to just below the title and summary, so it stays visible while the list scrolls
+- **Horizontal action bar**: share and delete sit side by side, taking about 46dp in manage mode
+- **Layout split**: the page is now a fixed header plus an independent scrolling list
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 

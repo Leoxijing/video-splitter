@@ -1,6 +1,6 @@
 {
-  "versionCode": 64,
-  "versionName": "7.2",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.2/VideoSplitter-7.2.apk",
-  "notes": "分割历史批量操作栏移到页面顶部并固定：删除按钮不再随列表滚动而消失；分享与删除改为并排各占一半，管理模式下仅占约 46dp 高度。页面拆为固定顶部区与独立滚动列表，删除确认、多选、批量删除、分享等功能保持不变。"
+  "versionCode": 65,
+  "versionName": "7.3",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.3/VideoSplitter-7.3.apk",
+  "notes": "分割历史播放页新增删除入口：可删除当前片段或整段视频的全部片段，两级确认防误操作；删除后自动切换播放位置或退出播放页，历史列表同步刷新；正在播放的文件也能删除（先让出播放器再删），删除失败时自动改走系统删除确认。已在 MuMu 模拟器实测通过。"
 }
