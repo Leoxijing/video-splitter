@@ -2,9 +2,9 @@
 
 本文件是 VideoSplitter（视频分割）APP 的第三方组件清单与许可声明，随 APP 分发并在应用内「更新日志 → 开源许可」中展示。
 
-- 适用版本：v6.6（versionCode 58）及以后（v6.6 将 ffmpeg-kit 依赖换为 16 KB 对齐的维护构建，见下）
+- 适用版本：v7.6（versionCode 68）及以后；更早版本自 v6.6 起适用（v6.6 将 ffmpeg-kit 依赖换为 16 KB 对齐的维护构建，见下）
 - 核查方式：逐文件检查 `app/src` 代码与资源、`app/build.gradle.kts` 依赖声明，并用 Gradle `releaseRuntimeClasspath` 依赖树确认实际打包内容；v6.6 另逐库检查 APK 内 `.so` 的 ELF PT_LOAD 对齐与 ZIP 偏移
-- 结论：本项目未包含整段复制自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**图标路径数据**
+- 结论：本项目未包含整段复制或改编自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**7 个图标路径数据**（2026-11-22 复核，详见第七节）
 
 ## 一、随 APK 分发的第三方组件
 
@@ -42,14 +42,22 @@
 
 ## 三、图标与视觉资源
 
-- 7 个界面矢量图标的路径数据来自 Google Material Icons（Apache-2.0），已在各 `ic_*.xml` 文件头注释中标注来源、原作者与许可，并在 README「第三方组件与署名」区块列出。
-- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_*.xml`、`progress_round.xml`）为本项目原创绘制，不含第三方素材。
+- 7 个界面矢量图标的路径数据来自 Google Material Icons（Apache-2.0），已在各 `ic_*.xml` 文件头注释中标注来源、原作者与许可，并在 README「第三方组件与署名」区块列出：
+  `ic_arrow_back`、`ic_pause`（按同一造型等价重绘）、`ic_play_arrow`、`ic_skip_next`、`ic_fullscreen`、`ic_fullscreen_exit`、`ic_video_placeholder`。
+- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_btn.xml`、`glass_btn_primary.xml`、`glass_card.xml`、`glass_card_dark.xml` 及 night 变体）、其余 10 个界面图标（`ic_back`、`ic_changelog`、`ic_clean`、`ic_history`、`ic_limit`、`ic_logs`、`ic_theme`、`ic_update` 等）为本项目原创绘制，不含第三方素材。
 - 未内置任何第三方字体文件；界面文字使用系统字体（`Typeface.DEFAULT` / `MONOSPACE`）。
 - `design_icons.py` 为开发期图标预览脚本（依赖 Pillow），不随 APK 分发，不属于分发内容。
 
 ## 四、开发与构建工具（不随 APK 分发）
 
-Android SDK、Gradle、Kotlin 编译器、Android Gradle Plugin、Pillow 等仅用于构建与开发，未以代码或资源形式打包进 APK。
+以下工具仅用于构建与开发，未以代码或资源形式打包进 APK：
+
+| 工具 | 来源 | 原作者 | 许可 | 用途 |
+| --- | --- | --- | --- | --- |
+| Gradle | https://gradle.org/ | Gradle Inc. | Apache-2.0 | 构建 |
+| Kotlin 编译器 / kotlin-gradle-plugin | https://kotlinlang.org/ | JetBrains s.r.o. | Apache-2.0 | 编译 Kotlin |
+| Android Gradle Plugin / Android SDK Build-Tools | https://developer.android.com/studio | The Android Open Source Project / Google LLC | Apache-2.0（SDK 使用另受 Android SDK 条款约束） | 打包 APK |
+| Pillow | https://python-pillow.org/ | Jeffrey A. Clark 等 | MIT-CMU（HPND） | 仅 `design_icons.py` 生成图标预览 |
 
 ## 五、项目自身版权与许可
 
@@ -63,4 +71,15 @@ Android SDK、Gradle、Kotlin 编译器、Android Gradle Plugin、Pillow 等仅�
 2. FFmpeg 精确版本号：`ffmpeg-kit-min:6.0.4` 对应 FFmpeg 6.0 系列；若需逐位精确（如 6.0.x），可在设备上执行 `ffmpeg -version` 或查阅 AAR 内版本字符串确认。
 3. LGPL 合规是否需要额外提供源码离线包（当前提供上游链接与 Maven 坐标）。
 4. 本项目源码目前未在 GitHub 公开（仓库仅含文档与版本信息），因此「可替换库」依赖用户自行从 Maven 获取 AAR 重建；如需更完整的合规体验，可考虑公开源码或提供未签名构建说明。
-5. AI 生成代码的相似性无法完全排除：已逐文件核查未发现整段复制痕迹，若后续发现与某开源项目高度相似，应按同一规则补充署名。
+5. AI 生成代码的相似性：2026-11-22 已逐文件复核（方法见第七节），未发现整段复制或改写痕迹；后续若发现与某开源项目高度相似，按同一规则补充署名。
+
+## 七、代码原创性核查记录（2026-11-22）
+
+- 核查范围：`app/src/main/java` 全部 18 个 Kotlin 文件（约 6900 行）、`app/src/main/res` 下 17 个矢量图标与 8 个形状/渐变资源、`AndroidManifest.xml`、`app/build.gradle.kts` 与 `settings.gradle.kts`、`design_icons.py`
+- 核查方法：
+  1. 逐文件检索版权头、许可证标识、外部链接与常见复制痕迹（`TODO`、`StackOverflow`、博客来源等）
+  2. 逐个比对矢量图标 `pathData` 与 Material Icons：7 个命中（已在文件头署名），10 个为自绘（圆弧/贝塞尔曲线 + 自有坐标系，非 24 网格填充路径）
+  3. 以 `releaseRuntimeClasspath` 依赖树核对实际打包组件，确认与第一节清单一致，无未声明依赖
+  4. 通读共享工具与自定义控件（`Ui`、`Theme`、`Dialogs`、`PlayerActivity` 手势/画面适配、`MediaFiles`、`StatusBarProgress`、`AppLog`），确认无整段复制或改写自外部项目
+- 结论：未发现复制或改编的第三方业务代码；非原创内容仅为未修改的二进制依赖与 7 个图标路径数据，均已在第一节与 APP 内「开源许可与第三方署名」页署名
+- 未随包分发任何第三方字体、图片、音频素材；`design_icons.py` 为开发期预览脚本，不进入 APK

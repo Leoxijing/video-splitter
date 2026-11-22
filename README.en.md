@@ -27,22 +27,22 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.5 (latest · versionCode 67)
+### 🚀 v7.6 (latest · versionCode 68)
 
-- **Dialog buttons no longer squeezed into vertical text**: when three buttons do not fit in one row, the layout no longer compresses children; it measures natural widths first and falls back to a full-width vertical stack, so text stays on one line and hit areas keep their shape
-- **Stable button sizing**: single line with ellipsis, 44dp minimum height, 72dp minimum width, identical padding at every screen size and font scale
-- **Consistent on large screens and landscape**: dialog width stays at 86% on phones but is capped at 420dp, so buttons are not stretched into bars on tablets, desktop windows or landscape
-- **Delete-button fixes**: a deleting flag ignores completion/error callbacks so auto-advance cannot reopen the clip being removed; playback is paused before stopping, and failures falling back to the system dialog are now logged
-- **Tested**: portrait stacks the three long buttons with no clipping (also at 1.3× font scale), two-button dialogs keep their original row, and the landscape player delete entry plus both confirmation dialogs stay intact, including landscape at 1.3× font scale
-- **Verified**: build succeeds, Lint 0 errors
+- **Code originality review (2026-11-22)**: all 18 Kotlin sources, 17 vector icons, 8 shape/gradient resources and the build scripts were reviewed file by file; no copied or adapted third-party business code was found
+- **Only two kinds of non-original content**: unmodified binary dependencies, and the path data of 7 Material Icons; both were already attributed and are now documented in more detail
+- **Icon attribution refined**: `ic_pause` is marked as an equivalent redraw; the Material icons are listed file by file, and the other 10 icons are explicitly marked as original
+- **Dev tool attribution completed**: Gradle, the Kotlin compiler, AGP / SDK Build-Tools and Pillow now list source, author and license
+- **Doc fixes**: dropped the stale `progress_round.xml` reference; the in-app notices page and the repository notice gained a "code originality review" section, mirrored in both READMEs
+- **No logic changes** — comments and attribution docs only; build succeeds, Lint 0 errors
 
-### v7.4 (versionCode 66)
+### v7.5 (versionCode 67)
 
-- **Cleanup page now scans deleted clips too**: recycle-bin remnants (`.trashed-*` files) of split clips are listed under "deleted clip", even when their source video is already gone, so space left behind by deletions can be reclaimed
-- **Originals stay findable after clips are deleted**: a split-source record now stores the file name and size on every successful split instead of relying only on leftover clip names
-- **Scan order**: originals first, then their recycle-bin remnants, then deleted clips; within a kind, larger files come first
-- **Hardened deletion**: the page uses the shared helper — MediaStore delete first, path fallback with retry — and reports how many files could not be removed
-- **Tested**: MuMu emulator verified correct grouping of all five record kinds, automatic list refresh after deletion, and the empty state once everything is cleaned
+- **Dialog buttons no longer squeezed into vertical text**: when three buttons do not fit in one row, widths are measured first and the row falls back to a full-width vertical stack
+- **Stable button sizing**: single line with ellipsis, 44dp minimum height, 72dp minimum width
+- **Consistent on large screens and landscape**: dialog width is capped at 420dp
+- **Delete-button fixes**: a deleting flag ignores completion/error callbacks so auto-advance cannot reopen the clip being removed
+- **Tested**: portrait, landscape and 1.3× font scale all keep buttons and dialogs intact
 - **Verified**: build succeeds, Lint 0 errors
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
@@ -91,13 +91,15 @@ This app uses or references the following third-party projects. Source links, pr
   - Source: https://github.com/google/guava
   - Original author: Google LLC
   - License: Apache License 2.0
-- **Material Icons** — path data for the play, pause, next, fullscreen and back vector icons
+- **Material Icons** — path data for 7 UI icons: `ic_arrow_back`, `ic_pause` (equivalent redraw), `ic_play_arrow`, `ic_skip_next`, `ic_fullscreen`, `ic_fullscreen_exit`, `ic_video_placeholder`
   - Source: https://fonts.google.com/icons
-  - Provenance: icon paths from Google Material Design Icons, used in `app/src/main/res/drawable/ic_*.xml`; each file header states source, author and license
+  - Provenance: icon paths from Google Material Design Icons, used in the same-named files under `app/src/main/res/drawable/`; each file header states source, provenance, author and license
   - Original author: Google LLC
   - License: Apache License 2.0
 
-All components above are used as **unmodified** binary dependencies or icon path data. The launcher icon and gradient/frosted backgrounds are original artwork; no third-party fonts or assets are bundled.
+All components above are used as **unmodified** binary dependencies or icon path data. The launcher icon, gradient/frosted backgrounds and the other 10 UI icons are original artwork; no third-party fonts, images or audio are bundled.
+
+A full review on 2026-11-22 of all 18 Kotlin sources and resources found no copied or adapted third-party business code; the only non-original content is the dependencies above plus those 7 icon paths. Scope, method and conclusion are documented in section 7 of [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Apart from the third-party components above, the UI, business logic, cleanup/preview/in-app-update features are original implementations (AI-assisted, reviewed by the maintainer).
 
