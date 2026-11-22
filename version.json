@@ -1,6 +1,6 @@
 {
-  "versionCode": 68,
-  "versionName": "7.6",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.6/VideoSplitter-7.6.apk",
-  "notes": "全项目代码原创性核查：18 个 Kotlin 源码、17 个矢量图标、8 个形状资源与构建脚本逐文件复核，未发现复制或改编的第三方业务代码；非原创内容仅为未修改的二进制依赖与 7 个 Material Icons 图标路径，本次补齐逐文件清单、ic_pause 等价重绘说明与开发工具（Gradle / Kotlin / AGP / Pillow）署名，并修正署名文档中的陈旧引用。无逻辑改动。"
+  "versionCode": 69,
+  "versionName": "7.7",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.7/VideoSplitter-7.7.apk",
+  "notes": "主页界面重新设计：主题色渐变页头、带图标的渐变主按钮、本地片段概览卡，首页升级为有数据的内容页；统一设计语言（间距/圆角/字号令牌 + 按压反馈 + 分区标题 + 2 列瓷片 + 清理横条 + 页脚隐私说明），进度区空闲自动收起；分割历史/应用日志/更新日志空态统一为带图标与引导操作的样式；修复两处状态提示问题——日志级别误判（成功 N 个失败 0 个不再误标失败）与通知权限被拒绝无反馈（弹窗说明 + 去设置入口）；完成全项目功能体检。"
 }

@@ -27,7 +27,16 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.6 (latest · versionCode 68)
+### 🚀 v7.7 (latest · versionCode 69)
+
+- **Home screen redesign**: themed gradient hero panel, gradient primary button with icon, and a local-clips overview card — the home page is now a data-driven content page rather than a plain menu
+- **Unified design language**: spacing/radius/typography tokens plus press feedback; section titles, two-column tiles, cleanup row and a privacy footer all land together
+- **Unified empty states**: history / logs / update log now use icon + action empty states
+- **Status-feedback fixes**: log level misclassification ("0 failed" no longer flagged as failure) and a notification-permission denial dialog with a "go to settings" action
+- **Full feature audit**: all 16 claimed features verified as implemented, with a gap list and 10 prioritized suggestions
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.6 (versionCode 68)
 
 - **Code originality review (2026-11-22)**: all 18 Kotlin sources, 17 vector icons, 8 shape/gradient resources and the build scripts were reviewed file by file; no copied or adapted third-party business code was found
 - **Only two kinds of non-original content**: unmodified binary dependencies, and the path data of 7 Material Icons; both were already attributed and are now documented in more detail
