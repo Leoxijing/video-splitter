@@ -6,6 +6,12 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v7.1 (versionCode 63)
+- **分割历史缩略图放大**：历史记录卡片的首帧缩略图从 72dp 调大到 96dp，圆角同步从 12dp 调到 14dp，视频预览更清晰、更易辨认
+- **标题单行截断**：原文件名标题不再强制换行完整显示，改为按可用宽度单行展示，超出部分自动截断并以省略号（…）表示；卡片高度更稳定，长文件名不再挤压下方信息
+- **范围控制**：仅调整分割历史页的展示样式，分组、点击连续播放、管理模式多选与批量删除等功能保持不变
+- **校验**：`assembleDebug` 通过、`lintDebug` 0 Error
+
 ## v7.0 (versionCode 62)
 - **移除 HyperOS 厂商私有依赖**：删除 `HyperIsland.kt` 及全部 `miui.focus.*` 私有参数（焦点通知 JSON、图标 Bundle、按钮 Bundle），不再读取设备厂商标识、不再写入任何厂商私有 extras；APP 现在只用 AOSP Notification API，原生 Android 与各厂商系统行为一致
 - **新增标准状态栏进度封装**：`StatusBarProgress.kt` 把超级岛能力逐项映射到标准通知——小岛胶囊 → 状态栏持续小图标 + 折叠态标题「阶段 · 百分比」，大岛展开态 → `BigTextStyle` 详情 + 系统进度条，主题色进度条 → `setColor(Ui.accent)`，ticker/AOD → `setTicker`，岛上按钮 → 标准 `Notification.Action` + `PendingIntent`；首次自动展开改为交给系统，不强制悬浮通知

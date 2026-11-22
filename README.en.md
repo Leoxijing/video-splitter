@@ -27,7 +27,14 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.0 (latest · versionCode 62)
+### 🚀 v7.1 (latest · versionCode 63)
+
+- **Larger history thumbnails**: the first-frame thumbnail grows from 72dp to 96dp with a larger corner radius, making previews easier to recognise
+- **Single-line truncated titles**: source filenames no longer wrap to show in full; they stay on one line and ellipsize when too long, keeping card heights stable
+- **Scoped change**: only the history page presentation changed — grouping, continuous playback, manage mode multi-select and batch delete are untouched
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.0 (versionCode 62)
 
 - **Vendor-private dependency removed**: HyperIsland and every `miui.focus.*` parameter are gone — no vendor detection, no private extras, only AOSP Notification API; behaviour is identical on stock Android and every OEM skin
 - **Standard status-bar progress wrapper**: island capsule → persistent status-bar icon plus collapsed title "stage · percentage"; expanded island → `BigTextStyle` detail with the system progress bar; themed bar → `setColor`; island buttons → standard `Notification.Action`; first-show auto-expand is left to the system instead of forcing a heads-up
