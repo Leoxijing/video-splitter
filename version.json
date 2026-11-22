@@ -1,6 +1,6 @@
 {
-  "versionCode": 65,
-  "versionName": "7.3",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.3/VideoSplitter-7.3.apk",
-  "notes": "分割历史播放页新增删除入口：可删除当前片段或整段视频的全部片段，两级确认防误操作；删除后自动切换播放位置或退出播放页，历史列表同步刷新；正在播放的文件也能删除（先让出播放器再删），删除失败时自动改走系统删除确认。已在 MuMu 模拟器实测通过。"
+  "versionCode": 66,
+  "versionName": "7.4",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.4/VideoSplitter-7.4.apk",
+  "notes": "清理原视频页新增扫描已删除的分割片段：系统回收站里的 .trashed- 残片会以「已删除片段」单独列出，原视频已不在时也会列出；新增分割来源记录，片段被删光后仍能找到原片；删除统一走媒体库删除 + 路径兜底与重试，部分失败会明确提示。已在 MuMu 模拟器实测通过。"
 }

@@ -27,7 +27,16 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.3 (latest · versionCode 65)
+### 🚀 v7.4 (latest · versionCode 66)
+
+- **Cleanup page now scans deleted clips too**: recycle-bin remnants (`.trashed-*` files) of split clips are listed under "deleted clip", even when their source video is already gone, so space left behind by deletions can be reclaimed
+- **Originals stay findable after clips are deleted**: a split-source record now stores the file name and size on every successful split instead of relying only on leftover clip names
+- **Scan order**: originals first, then their recycle-bin remnants, then deleted clips; within a kind, larger files come first
+- **Hardened deletion**: the page uses the shared helper — MediaStore delete first, path fallback with retry — and reports how many files could not be removed
+- **Tested**: MuMu emulator verified correct grouping of all five record kinds, automatic list refresh after deletion, and the empty state once everything is cleaned
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.3 (versionCode 65)
 
 - **Delete from the player**: opening a group from history now shows a delete action in the title bar, offering "delete this clip" or "delete the whole group"; it only appears for history entry, never when playing from the home result card
 - **Two-step confirmation**: pick the scope first, then confirm the file count and size, with a note that only the selected clips are affected
@@ -37,12 +46,6 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 - **Hardened deletion**: a shared helper deletes via MediaStore first with path fallback and retry, and falls back to the system delete confirmation when the app lacks direct permission
 - **Tested**: MuMu emulator verified clip delete, whole-group delete, exit-on-empty and list sync, with other records untouched
 - **Verified**: build succeeds, Lint 0 errors
-
-### v7.2 (versionCode 64)
-
-- **Delete button pinned to top**: the bulk action bar moves to just below the title and summary, so it stays visible while the list scrolls
-- **Horizontal action bar**: share and delete sit side by side, taking about 46dp in manage mode
-- **Layout split**: the page is now a fixed header plus an independent scrolling list
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
