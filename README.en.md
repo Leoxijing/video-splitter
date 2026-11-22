@@ -27,24 +27,22 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.4 (latest · versionCode 66)
+### 🚀 v7.5 (latest · versionCode 67)
+
+- **Dialog buttons no longer squeezed into vertical text**: when three buttons do not fit in one row, the layout no longer compresses children; it measures natural widths first and falls back to a full-width vertical stack, so text stays on one line and hit areas keep their shape
+- **Stable button sizing**: single line with ellipsis, 44dp minimum height, 72dp minimum width, identical padding at every screen size and font scale
+- **Consistent on large screens and landscape**: dialog width stays at 86% on phones but is capped at 420dp, so buttons are not stretched into bars on tablets, desktop windows or landscape
+- **Delete-button fixes**: a deleting flag ignores completion/error callbacks so auto-advance cannot reopen the clip being removed; playback is paused before stopping, and failures falling back to the system dialog are now logged
+- **Tested**: portrait stacks the three long buttons with no clipping (also at 1.3× font scale), two-button dialogs keep their original row, and the landscape player delete entry plus both confirmation dialogs stay intact, including landscape at 1.3× font scale
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.4 (versionCode 66)
 
 - **Cleanup page now scans deleted clips too**: recycle-bin remnants (`.trashed-*` files) of split clips are listed under "deleted clip", even when their source video is already gone, so space left behind by deletions can be reclaimed
 - **Originals stay findable after clips are deleted**: a split-source record now stores the file name and size on every successful split instead of relying only on leftover clip names
 - **Scan order**: originals first, then their recycle-bin remnants, then deleted clips; within a kind, larger files come first
 - **Hardened deletion**: the page uses the shared helper — MediaStore delete first, path fallback with retry — and reports how many files could not be removed
 - **Tested**: MuMu emulator verified correct grouping of all five record kinds, automatic list refresh after deletion, and the empty state once everything is cleaned
-- **Verified**: build succeeds, Lint 0 errors
-
-### v7.3 (versionCode 65)
-
-- **Delete from the player**: opening a group from history now shows a delete action in the title bar, offering "delete this clip" or "delete the whole group"; it only appears for history entry, never when playing from the home result card
-- **Two-step confirmation**: pick the scope first, then confirm the file count and size, with a note that only the selected clips are affected
-- **Playback state handled**: deleting the current clip advances to the next one and refreshes the "N/M" title, deleting the last clip falls back to the new last one, and deleting the whole group exits the player
-- **Deleting the currently playing file works**: the player is released first (switch clip or exit) so the in-use file can be removed
-- **History stays in sync**: the list refreshes on return plus once more shortly after, so no deleted rows linger
-- **Hardened deletion**: a shared helper deletes via MediaStore first with path fallback and retry, and falls back to the system delete confirmation when the app lacks direct permission
-- **Tested**: MuMu emulator verified clip delete, whole-group delete, exit-on-empty and list sync, with other records untouched
 - **Verified**: build succeeds, Lint 0 errors
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".

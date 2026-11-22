@@ -1,6 +1,6 @@
 {
-  "versionCode": 66,
-  "versionName": "7.4",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.4/VideoSplitter-7.4.apk",
-  "notes": "清理原视频页新增扫描已删除的分割片段：系统回收站里的 .trashed- 残片会以「已删除片段」单独列出，原视频已不在时也会列出；新增分割来源记录，片段被删光后仍能找到原片；删除统一走媒体库删除 + 路径兜底与重试，部分失败会明确提示。已在 MuMu 模拟器实测通过。"
+  "versionCode": 67,
+  "versionName": "7.5",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.5/VideoSplitter-7.5.apk",
+  "notes": "修复弹窗按钮在窄容器下被压缩成竖排文字、按钮被拉高、点击区变形的问题：改为按自然宽度测量，放不下时纵向堆叠，按钮统一单行省略、最小 44dp 高 / 72dp 宽，弹窗宽度上限 420dp 让大屏与横屏观感一致；同时修复删除时自动续播重新占用待删片段的竞态。已在 MuMu 验证竖屏、横屏与 1.3 倍字号。"
 }
