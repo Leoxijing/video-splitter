@@ -1,6 +1,6 @@
 {
-  "versionCode": 63,
-  "versionName": "7.1",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.1/VideoSplitter-7.1.apk",
-  "notes": "分割历史页展示优化：首帧缩略图从 72dp 放大到 96dp，预览更清晰；原文件名标题改为单行显示、超长部分以省略号截断，卡片高度更稳定。分组、连续播放、管理模式批量删除等功能不变。"
+  "versionCode": 64,
+  "versionName": "7.2",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.2/VideoSplitter-7.2.apk",
+  "notes": "分割历史批量操作栏移到页面顶部并固定：删除按钮不再随列表滚动而消失；分享与删除改为并排各占一半，管理模式下仅占约 46dp 高度。页面拆为固定顶部区与独立滚动列表，删除确认、多选、批量删除、分享等功能保持不变。"
 }

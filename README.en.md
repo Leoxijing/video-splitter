@@ -27,28 +27,20 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.1 (latest · versionCode 63)
+### 🚀 v7.2 (latest · versionCode 64)
+
+- **Delete button pinned to top**: the bulk action bar moves from the end of the scrolling content to just below the title and summary, so the delete button stays visible while the list scrolls
+- **Horizontal action bar**: share and delete now sit side by side at half width each, taking about 46dp in manage mode and leaving more room for the list
+- **Behaviour unchanged**: delete confirmation, multi-select/select-all, batch delete, sharing and manage-mode state cleanup all work as before
+- **Layout split**: the page is now "fixed header (back bar + summary/manage + action bar) + independent scrolling list"
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.1 (versionCode 63)
 
 - **Larger history thumbnails**: the first-frame thumbnail grows from 72dp to 96dp with a larger corner radius, making previews easier to recognise
 - **Single-line truncated titles**: source filenames no longer wrap to show in full; they stay on one line and ellipsize when too long, keeping card heights stable
 - **Scoped change**: only the history page presentation changed — grouping, continuous playback, manage mode multi-select and batch delete are untouched
 - **Verified**: build succeeds, Lint 0 errors
-
-### v7.0 (versionCode 62)
-
-- **Vendor-private dependency removed**: HyperIsland and every `miui.focus.*` parameter are gone — no vendor detection, no private extras, only AOSP Notification API; behaviour is identical on stock Android and every OEM skin
-- **Standard status-bar progress wrapper**: island capsule → persistent status-bar icon plus collapsed title "stage · percentage"; expanded island → `BigTextStyle` detail with the system progress bar; themed bar → `setColor`; island buttons → standard `Notification.Action`; first-show auto-expand is left to the system instead of forcing a heads-up
-- **Same timing and interactions**: split/download progress, pause/resume/cancel, 300 ms throttle, foreground keep-alive and lock-screen visibility are unchanged; progress refreshes no longer repeat sound or vibration
-- **Compatibility gain**: any Android 13+ device shows the same stage, percentage, detail and controls — no more island on Xiaomi versus degraded notification elsewhere
-- **Verified**: build succeeds, Lint 0 errors, zero vendor-private identifiers in the APK DEX
-
-### v6.9 (versionCode 61)
-
-- **Home rebuilt**: the title now sits in a theme-colored gradient panel; the primary button uses a diagonal gradient with elevation; new section headers split the page into "primary action / progress / tools"
-- **Tools reworked**: the three-column text grid becomes two-column info tiles, and "Clean up originals" becomes a bottom bar entry
-- **Progress panel**: collapses when idle, tightened padding and bar, 0%/100% marks removed
-- **Completion misjudged as failure fixed**: failure is now detected only via the `!` marker, so completion shows a green "completed"
-- **App icon redesigned**: purple gradient with two offset white video blocks and a cut-out play triangle
 
 > Full history (all versions since v1.0) lives in [CHANGELOG.md](CHANGELOG.md), also viewable in-app via "Update Log".
 
