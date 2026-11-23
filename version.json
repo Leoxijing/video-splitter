@@ -1,6 +1,6 @@
 {
-  "versionCode": 69,
-  "versionName": "7.7",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.7/VideoSplitter-7.7.apk",
-  "notes": "主页界面重新设计：主题色渐变页头、带图标的渐变主按钮、本地片段概览卡，首页升级为有数据的内容页；统一设计语言（间距/圆角/字号令牌 + 按压反馈 + 分区标题 + 2 列瓷片 + 清理横条 + 页脚隐私说明），进度区空闲自动收起；分割历史/应用日志/更新日志空态统一为带图标与引导操作的样式；修复两处状态提示问题——日志级别误判（成功 N 个失败 0 个不再误标失败）与通知权限被拒绝无反馈（弹窗说明 + 去设置入口）；完成全项目功能体检。"
+  "versionCode": 70,
+  "versionName": "7.8",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.8/VideoSplitter-7.8.apk",
+  "notes": "片段重命名：历史卡片与结果卡可改片段组名，只改组名、保留 _partNNN 序号，相册 DISPLAY_NAME / 私有文件名 / checksums.txt 同步更新，含同名冲突校验与失败提示；命名模板：主页工具新增入口，支持 {name}/{date} 占位符与前后缀，可恢复默认；存储分析页：片段按组聚合、按体积倒序展示占比条，勾选批量释放空间，删除走 MediaFiles；统计失败态修复：本地概览区分读取失败与空态，异常时显示点击重试。新增 ic_rename/ic_storage 两个原创自绘图标，未引用第三方素材。"
 }

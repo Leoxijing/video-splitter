@@ -27,7 +27,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.7 (latest · versionCode 69)
+### 🚀 v7.8 (latest · versionCode 70)
+
+- **Clip renaming**: rename a clip group from history cards or the result card; _partNNN numbering is preserved and the media store / checksums stay in sync
+- **Naming template**: supports `{name}` / `{date}` placeholders with custom prefixes/suffixes, one-tap reset to default
+- **Storage analysis page**: clips grouped and sorted by size with proportion bars; select groups to reclaim space
+- **Stats failure state**: a failed local-stats read now shows a "tap to retry" hint instead of a false empty state
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.7 (versionCode 69)
 
 - **Home screen redesign**: themed gradient hero panel, gradient primary button with icon, and a local-clips overview card — the home page is now a data-driven content page rather than a plain menu
 - **Unified design language**: spacing/radius/typography tokens plus press feedback; section titles, two-column tiles, cleanup row and a privacy footer all land together
