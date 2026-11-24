@@ -1,6 +1,6 @@
 {
-  "versionCode": 71,
-  "versionName": "7.9",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.9/VideoSplitter-7.9.apk",
-  "notes": "主页导航重构：原 9 个功能入口按性质归为 3 类——片段管理（分割历史/存储分析/清理原视频）、偏好设置（分割上限/主题色/命名模板）、关于与更新（检查更新/更新日志/应用日志），首页只保留 3 张分类卡，信息密度显著下降但功能一项不少；点分类卡在页内切换到二级菜单（含返回栏、分区标题、入口列表与底部返回，物理返回键优先回主页）；分类卡用渐变图标底+标题+条目预览+箭头，统一按压与水波纹反馈，间距走设计令牌；主页与二级菜单共用 560dp 居中宽度与安全边距，兼顾桌面端与移动端；分割/下载期间清理入口自动锁定。"
+  "versionCode": 72,
+  "versionName": "8.0",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v8.0/VideoSplitter-8.0.apk",
+  "notes": "紧急修复启动闪退：v7.9 主页导航重构把主页面板与二级菜单面板两个 View 直接挂到同一个 ScrollView 下，违反 Android『ScrollView 只能有一个直接子元素』约束，导致应用一打开即崩溃（Xiaomi 18 Pro Max 反馈）。本次新增 pages 线性容器包裹两个面板作为 ScrollView 唯一子元素，滚动置顶改用 mainScroll 引用。v7.9 的 3 类二级菜单导航功能全部保留，无功能删减。"
 }
