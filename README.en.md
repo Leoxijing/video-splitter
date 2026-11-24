@@ -27,7 +27,12 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.9 (latest · versionCode 71)
+### 🚀 v8.0 (latest · versionCode 72)
+
+- **Urgent startup-crash fix**: v7.9 attached two panels directly to a ScrollView, causing an immediate crash on launch; fixed by wrapping them in a single container. All v7.9 submenu features are preserved.
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.9 (versionCode 71)
 
 - **Home navigation restructure**: the 9 entries are grouped into 3 categories — Clip management / Preferences / About & updates — leaving 3 category cards on the home screen with no feature lost
 - **In-page submenu**: tapping a category switches panels in place, with a back bar and hardware-back handling
