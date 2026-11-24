@@ -27,7 +27,14 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v7.8 (latest · versionCode 70)
+### 🚀 v7.9 (latest · versionCode 71)
+
+- **Home navigation restructure**: the 9 entries are grouped into 3 categories — Clip management / Preferences / About & updates — leaving 3 category cards on the home screen with no feature lost
+- **In-page submenu**: tapping a category switches panels in place, with a back bar and hardware-back handling
+- **Visuals & responsiveness**: gradient icon tiles with item previews and press feedback, spacing on design tokens; 560dp centered layout works on desktop and mobile
+- **Verified**: build succeeds, Lint 0 errors
+
+### v7.8 (versionCode 70)
 
 - **Clip renaming**: rename a clip group from history cards or the result card; _partNNN numbering is preserved and the media store / checksums stay in sync
 - **Naming template**: supports `{name}` / `{date}` placeholders with custom prefixes/suffixes, one-tap reset to default

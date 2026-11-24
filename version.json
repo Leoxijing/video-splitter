@@ -1,6 +1,6 @@
 {
-  "versionCode": 70,
-  "versionName": "7.8",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.8/VideoSplitter-7.8.apk",
-  "notes": "片段重命名：历史卡片与结果卡可改片段组名，只改组名、保留 _partNNN 序号，相册 DISPLAY_NAME / 私有文件名 / checksums.txt 同步更新，含同名冲突校验与失败提示；命名模板：主页工具新增入口，支持 {name}/{date} 占位符与前后缀，可恢复默认；存储分析页：片段按组聚合、按体积倒序展示占比条，勾选批量释放空间，删除走 MediaFiles；统计失败态修复：本地概览区分读取失败与空态，异常时显示点击重试。新增 ic_rename/ic_storage 两个原创自绘图标，未引用第三方素材。"
+  "versionCode": 71,
+  "versionName": "7.9",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v7.9/VideoSplitter-7.9.apk",
+  "notes": "主页导航重构：原 9 个功能入口按性质归为 3 类——片段管理（分割历史/存储分析/清理原视频）、偏好设置（分割上限/主题色/命名模板）、关于与更新（检查更新/更新日志/应用日志），首页只保留 3 张分类卡，信息密度显著下降但功能一项不少；点分类卡在页内切换到二级菜单（含返回栏、分区标题、入口列表与底部返回，物理返回键优先回主页）；分类卡用渐变图标底+标题+条目预览+箭头，统一按压与水波纹反馈，间距走设计令牌；主页与二级菜单共用 560dp 居中宽度与安全边距，兼顾桌面端与移动端；分割/下载期间清理入口自动锁定。"
 }
