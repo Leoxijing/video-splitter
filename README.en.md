@@ -27,7 +27,14 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.0 (latest · versionCode 72)
+### 🚀 v8.1 (latest · versionCode 73)
+
+- **Unified back navigation**: all secondary pages (history / logs / changelog / cleanup / storage / notices / player) now return to the level-1 home panel via both the back button and system gestures, instead of exiting the app
+- **Home state preserved**: returning reuses the MainActivity instance, keeping scroll position, progress and stats
+- **Exit only at root**: the home submenu collapses first; only the top-level panel performs exit. Player keeps its locked/fullscreen back behavior.
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.0 (versionCode 72)
 
 - **Urgent startup-crash fix**: v7.9 attached two panels directly to a ScrollView, causing an immediate crash on launch; fixed by wrapping them in a single container. All v7.9 submenu features are preserved.
 - **Verified**: build succeeds, Lint 0 errors

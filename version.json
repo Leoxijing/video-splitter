@@ -1,6 +1,6 @@
 {
-  "versionCode": 72,
-  "versionName": "8.0",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v8.0/VideoSplitter-8.0.apk",
-  "notes": "紧急修复启动闪退：v7.9 主页导航重构把主页面板与二级菜单面板两个 View 直接挂到同一个 ScrollView 下，违反 Android『ScrollView 只能有一个直接子元素』约束，导致应用一打开即崩溃（Xiaomi 18 Pro Max 反馈）。本次新增 pages 线性容器包裹两个面板作为 ScrollView 唯一子元素，滚动置顶改用 mainScroll 引用。v7.9 的 3 类二级菜单导航功能全部保留，无功能删减。"
+  "versionCode": 73,
+  "versionName": "8.1",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v8.1/VideoSplitter-8.1.apk",
+  "notes": "统一返回导航：新增 Nav 工具注册 OnBackInvokedCallback 覆盖系统返回键与预测性手势（此前各页只重写 onBackPressed，开启预测性返回的系统上不生效，导致二级页返回直接退出）。所有二级页面（历史/日志/更新日志/清理/存储分析/开源许可/播放器）返回按钮与系统手势统一回一级主面板，用 CLEAR_TOP|SINGLE_TOP 复用 MainActivity 实例，保留滚动位置/进度/统计状态；仅顶层主面板执行退出，页内二级菜单先收起；播放器保留锁屏解锁与全屏退出的返回特例。"
 }
