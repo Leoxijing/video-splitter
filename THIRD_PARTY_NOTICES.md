@@ -4,7 +4,7 @@
 
 - 适用版本：v7.6（versionCode 68）及以后；更早版本自 v6.6 起适用（v6.6 将 ffmpeg-kit 依赖换为 16 KB 对齐的维护构建，见下）
 - 核查方式：逐文件检查 `app/src` 代码与资源、`app/build.gradle.kts` 依赖声明，并用 Gradle `releaseRuntimeClasspath` 依赖树确认实际打包内容；v6.6 另逐库检查 APK 内 `.so` 的 ELF PT_LOAD 对齐与 ZIP 偏移
-- 结论：本项目未包含整段复制或改编自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**7 个图标路径数据**（2026-11-22 复核，详见第七节）
+- 结论：本项目未包含整段复制或改编自第三方项目的业务代码；随 APK 分发的第三方内容均为**未修改的二进制依赖**与**7 个图标路径数据**（2026-11-25 复核，详见第七节）
 
 ## 一、随 APK 分发的第三方组件
 
@@ -44,7 +44,7 @@
 
 - 7 个界面矢量图标的路径数据来自 Google Material Icons（Apache-2.0），已在各 `ic_*.xml` 文件头注释中标注来源、原作者与许可，并在 README「第三方组件与署名」区块列出：
   `ic_arrow_back`、`ic_pause`（按同一造型等价重绘）、`ic_play_arrow`、`ic_skip_next`、`ic_fullscreen`、`ic_fullscreen_exit`、`ic_video_placeholder`。
-- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_btn.xml`、`glass_btn_primary.xml`、`glass_card.xml`、`glass_card_dark.xml` 及 night 变体）、其余 10 个界面图标（`ic_back`、`ic_changelog`、`ic_clean`、`ic_history`、`ic_limit`、`ic_logs`、`ic_theme`、`ic_update` 等）为本项目原创绘制，不含第三方素材。
+- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_btn.xml`、`glass_btn_primary.xml`、`glass_card.xml`、`glass_card_dark.xml` 及 night 变体）、其余 12 个界面图标（`ic_back`、`ic_changelog`、`ic_clean`、`ic_history`、`ic_limit`、`ic_logs`、`ic_theme`、`ic_update`、`ic_rename`、`ic_storage` 等）为本项目原创绘制，不含第三方素材。
 - 未内置任何第三方字体文件；界面文字使用系统字体（`Typeface.DEFAULT` / `MONOSPACE`）。
 - `design_icons.py` 为开发期图标预览脚本（依赖 Pillow），不随 APK 分发，不属于分发内容。
 
@@ -73,7 +73,9 @@
 4. 本项目源码目前未在 GitHub 公开（仓库仅含文档与版本信息），因此「可替换库」依赖用户自行从 Maven 获取 AAR 重建；如需更完整的合规体验，可考虑公开源码或提供未签名构建说明。
 5. AI 生成代码的相似性：2026-11-22 已逐文件复核（方法见第七节），未发现整段复制或改写痕迹；后续若发现与某开源项目高度相似，按同一规则补充署名。
 
-## 七、代码原创性核查记录（2026-11-22）
+## 七、代码原创性核查记录
+
+### 2026-11-22 全量核查
 
 - 核查范围：`app/src/main/java` 全部 18 个 Kotlin 文件（约 6900 行）、`app/src/main/res` 下 17 个矢量图标与 8 个形状/渐变资源、`AndroidManifest.xml`、`app/build.gradle.kts` 与 `settings.gradle.kts`、`design_icons.py`
 - 核查方法：
@@ -83,3 +85,9 @@
   4. 通读共享工具与自定义控件（`Ui`、`Theme`、`Dialogs`、`PlayerActivity` 手势/画面适配、`MediaFiles`、`StatusBarProgress`、`AppLog`），确认无整段复制或改写自外部项目
 - 结论：未发现复制或改编的第三方业务代码；非原创内容仅为未修改的二进制依赖与 7 个图标路径数据，均已在第一节与 APP 内「开源许可与第三方署名」页署名
 - 未随包分发任何第三方字体、图片、音频素材；`design_icons.py` 为开发期预览脚本，不进入 APK
+
+### 2026-11-25 增量复核（v7.7–v8.1 改动）
+
+- 复核范围：v7.7 主页改版至 v8.1 统一返回导航期间新增与改动的代码——新增 `Nav.kt`、`ClipRename.kt`、`SplitRecords.kt`（Kotlin 文件 18 → 21，合计约 8100 行）、新增自绘图标 `ic_rename.xml` 与 `ic_storage.xml`（矢量图标 17 → 19），以及 `Ui`/`MainActivity`/`PlayerActivity` 等 15 个文件的导航与界面重构
+- 复核方法：检索全部源码中的版权头、许可证标识、外部链接与常见复制痕迹（`TODO`、`StackOverflow` 等）；核对 `app/build.gradle.kts` 依赖声明无新增（仍为 `ffmpeg-kit-min:6.0.4` + `androidx.core:core-ktx`）；逐个检查新增图标文件头的原创声明注释
+- 结论：未发现复制或改编的第三方业务代码；新增图标均为项目自绘并在文件头注明；`ChangelogActivity` 新增 raw.githubusercontent.com 与 cdn.jsdelivr.net 两个在线更新日志拉取地址（仅网络请求目标，不分发第三方代码，无需署名）

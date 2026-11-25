@@ -27,7 +27,20 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.0 (latest · versionCode 72)
+### 🚀 v8.2 (latest · versionCode 74)
+
+- **Attribution review updated (2026-11-25)**: incremental review of the v7.7–v8.1 changes passed — 21 Kotlin sources and 19 vector icons in total, no new dependencies, no copied or adapted third-party business code found
+- **Four attribution docs synced**: THIRD_PARTY_NOTICES, the in-app open-source licenses page, and both READMEs; original icon list 10 → 12
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.1 (versionCode 73)
+
+- **Unified back navigation**: all secondary pages (history / logs / changelog / cleanup / storage / notices / player) now return to the level-1 home panel via both the back button and system gestures, instead of exiting the app
+- **Home state preserved**: returning reuses the MainActivity instance, keeping scroll position, progress and stats
+- **Exit only at root**: the home submenu collapses first; only the top-level panel performs exit. Player keeps its locked/fullscreen back behavior.
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.0 (versionCode 72)
 
 - **Urgent startup-crash fix**: v7.9 attached two panels directly to a ScrollView, causing an immediate crash on launch; fixed by wrapping them in a single container. All v7.9 submenu features are preserved.
 - **Verified**: build succeeds, Lint 0 errors
@@ -126,9 +139,9 @@ This app uses or references the following third-party projects. Source links, pr
   - Original author: Google LLC
   - License: Apache License 2.0
 
-All components above are used as **unmodified** binary dependencies or icon path data. The launcher icon, gradient/frosted backgrounds and the other 10 UI icons are original artwork; no third-party fonts, images or audio are bundled.
+All components above are used as **unmodified** binary dependencies or icon path data. The launcher icon, gradient/frosted backgrounds and the other 12 UI icons are original artwork; no third-party fonts, images or audio are bundled.
 
-A full review on 2026-11-22 of all 18 Kotlin sources and resources found no copied or adapted third-party business code; the only non-original content is the dependencies above plus those 7 icon paths. Scope, method and conclusion are documented in section 7 of [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+An incremental review on 2026-11-25 of the v7.7–v8.1 changes (21 Kotlin sources and 19 vector icons in total) found no copied or adapted third-party business code; the only non-original content remains the dependencies above plus those 7 icon paths. Scope, method and conclusion of all reviews are documented in section 7 of [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Apart from the third-party components above, the UI, business logic, cleanup/preview/in-app-update features are original implementations (AI-assisted, reviewed by the maintainer).
 

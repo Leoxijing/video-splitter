@@ -6,6 +6,19 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v8.2 (versionCode 74)
+- **署名区复核更新（2026-11-25）**：完成 v7.7–v8.1 改动的第三方代码增量复核——新增 `Nav.kt`、`ClipRename.kt`、`SplitRecords.kt`（Kotlin 文件 18 → 21，约 8100 行）与自绘图标 `ic_rename`、`ic_storage`（矢量图标 17 → 19）；检索未发现版权头、许可标识或复制痕迹，依赖声明无新增（仍为 `ffmpeg-kit-min:6.0.4` + `androidx.core:core-ktx`）
+- **四处署名文档同步**：仓库 `THIRD_PARTY_NOTICES.md` 新增 2026-11-25 增量复核记录、原创图标清单 10 → 12；APP 内「开源许可」页同步；README 中英署名区块同步复核结论与图标数
+- **在线更新日志来源说明**：`ChangelogActivity` 的 raw.githubusercontent.com 与 cdn.jsdelivr.net 拉取地址确认仅为网络请求目标，不分发第三方代码，无需署名
+- **校验通过**：编译成功、Lint 0 Error、aapt 版本号 74/8.2
+
+## v8.1 (versionCode 73)
+- **统一返回导航**：新增 `Nav` 工具，注册 `OnBackInvokedCallback` 覆盖系统返回键与预测性手势返回——此前除播放页外各页只重写 `onBackPressed()`，在开启 `enableOnBackInvokedCallback` 的系统上该方法不被调用，导致二级页面手势返回时直接 finish、可能退出应用
+- **二级页面返回不退出**：历史/日志/更新日志/清理/存储分析/开源许可/播放器等所有二级页面，返回按钮与系统返回统一走 `Nav.backToRoot()`，用 `CLEAR_TOP|SINGLE_TOP` 回一级主面板并复用 MainActivity 实例，保留主面板滚动位置、进度与统计状态
+- **仅顶层执行退出**：MainActivity 自己处理顶层返回——页内二级菜单打开时先收起回主页，仅在主面板才执行原有退出逻辑；从二级页返回时自动收起可能残留的二级菜单，落在顶层
+- **播放器返回保持特例**：锁屏时先唤出解锁浮层、全屏时先退全屏，其余情况才回一级主面板
+- **校验通过**：编译成功、Lint 0 Error、aapt 版本号 73/8.1
+
 ## v8.0 (versionCode 72)
 - **紧急修复启动闪退（v7.9 回归）**：v7.9 主页导航重构时把「主页面板」与「二级菜单面板」两个 View 直接挂到同一个 `ScrollView` 下，违反 Android「ScrollView 只能有一个直接子元素」的约束，导致应用一打开即抛 `IllegalStateException` 崩溃（Xiaomi 18 Pro Max 实测反馈）
 - **修复方式**：新增 `pages` 线性容器包裹两个面板作为 ScrollView 的唯一子元素；面板切换后的滚动置顶改用保存的 `mainScroll` 引用（原通过 `parent as? ScrollView` 强转，改结构后会失效）
