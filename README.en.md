@@ -27,7 +27,15 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.2 (latest · versionCode 74)
+### 🚀 v8.3 (latest · versionCode 75)
+
+- **Progress notifications adopt Android 16 Promoted Notifications**: split and update-download progress are promoted to ongoing notifications on Android 16+, shown at the top of the drawer, on the lock screen and as a status-bar chip
+- **System limitation**: **Promoted Notifications work only on Android 16 (API 36) and above**; on Android 13–15 progress notifications remain standard ongoing notifications with no functional impact
+- **compileSdk 34 → 36** (targetSdk 34, minSdk 33 unchanged)
+- **Attribution review**: no new third-party dependencies, code or icons
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.2 (versionCode 74)
 
 - **Attribution review updated (2026-11-25)**: incremental review of the v7.7–v8.1 changes passed — 21 Kotlin sources and 19 vector icons in total, no new dependencies, no copied or adapted third-party business code found
 - **Four attribution docs synced**: THIRD_PARTY_NOTICES, the in-app open-source licenses page, and both READMEs; original icon list 10 → 12

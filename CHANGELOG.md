@@ -6,6 +6,13 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v8.3 (versionCode 75)
+- **进度通知全面接入 Android 16 Promoted Notifications（Live Update）**：分割进度与更新下载进度通知在 Android 16+ 上通过 `EXTRA_REQUEST_PROMOTED_ONGOING` 请求推广资格，满足官方条件（ongoing 常驻、BigTextStyle/ProgressStyle 标准样式、非 MIN 渠道、无自定义视图、非组摘要）时由系统提升为推广常驻通知——显示在通知抽屉顶部、锁屏与状态栏 chip，默认展开且不可折叠
+- **权限与编译**：Manifest 声明 `POST_PROMOTED_NOTIFICATIONS`（非运行时权限，声明即授予）；compileSdk 34 → 36（targetSdk 保持 34、minSdk 33 不变，仅用于引用 API 36 常量）
+- **系统限制**：**Promoted Notifications 仅在 Android 16（API 36）及以上系统生效；Android 13–15 上进度通知仍为普通常驻通知，分割与下载功能不受影响**
+- **署名复核（2026-11-25）**：本次无新增第三方依赖、代码与图标，四处署名文档无需变更
+- **校验通过**：编译成功、Lint 0 Error、aapt 版本号 75/8.3
+
 ## v8.2 (versionCode 74)
 - **署名区复核更新（2026-11-25）**：完成 v7.7–v8.1 改动的第三方代码增量复核——新增 `Nav.kt`、`ClipRename.kt`、`SplitRecords.kt`（Kotlin 文件 18 → 21，约 8100 行）与自绘图标 `ic_rename`、`ic_storage`（矢量图标 17 → 19）；检索未发现版权头、许可标识或复制痕迹，依赖声明无新增（仍为 `ffmpeg-kit-min:6.0.4` + `androidx.core:core-ktx`）
 - **四处署名文档同步**：仓库 `THIRD_PARTY_NOTICES.md` 新增 2026-11-25 增量复核记录、原创图标清单 10 → 12；APP 内「开源许可」页同步；README 中英署名区块同步复核结论与图标数

@@ -27,7 +27,15 @@
 
 ## 更新日志
 
-### 🚀 v8.2（最新 · versionCode 74）
+### 🚀 v8.3（最新 · versionCode 75）
+
+- **进度通知接入 Android 16 Promoted Notifications**：分割与更新下载进度在 Android 16+ 提升为推广常驻通知，显示在通知抽屉顶部、锁屏与状态栏 chip
+- **系统限制**：**Promoted Notifications 仅 Android 16（API 36）及以上生效**；Android 13–15 上仍为普通常驻进度通知，功能不受影响
+- **compileSdk 34 → 36**（targetSdk 34、minSdk 33 不变）
+- **署名复核**：无新增第三方依赖、代码与图标
+- **校验通过**：编译成功、Lint 0 Error
+
+### v8.2（versionCode 74）
 
 - **署名区复核更新（2026-11-25）**：v7.7–v8.1 改动增量复核通过——累计 21 个 Kotlin 源文件、19 个矢量图标，依赖无新增，未发现复制或改编的第三方业务代码
 - **四处署名文档同步**：THIRD_PARTY_NOTICES、APP 内开源许可页、README 中英；原创图标清单 10 → 12
