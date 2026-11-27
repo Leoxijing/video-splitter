@@ -27,7 +27,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.5 (latest · versionCode 77)
+### 🚀 v8.6 (latest · versionCode 78)
+
+- **New app icon ("Split Film")**: two perforated white film strips broken apart and offset, holes punched through to the gradient background, picture areas tinted purple — literally "video cut into segments"; monochrome themed icon updated in sync
+- **Attribution review**: all icons self-drawn, no third-party assets
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.5 (versionCode 77)
 
 - **Redesigned app icon**: a rounded play triangle split vertically with the two halves offset apart, floating shadow and edge vignette over the theme-purple gradient; monochrome themed icon added
 - **Attribution updated**: ic_launcher_monochrome.xml added to the original-icon list; all icons self-drawn

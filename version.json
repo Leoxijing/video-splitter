@@ -1,6 +1,6 @@
 {
-  "versionCode": 77,
-  "versionName": "8.5",
-  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v8.5/VideoSplitter-8.5.apk",
-  "notes": "启动图标全新设计：圆角播放三角被竖直切开、两半台阶式错位滑开（左半左让、右半右移下沉），白色主体带底部悬浮投影，背景保留主题紫对角渐变并新增边缘暗角收拢视线；新增 monochrome 主题图标（适配系统主题图标，顺带消除 Lint 告警）。署名清单同步补充 ic_launcher_monochrome。"
+  "versionCode": 78,
+  "versionName": "8.6",
+  "url": "https://github.com/Leoxijing/video-splitter/releases/download/v8.6/VideoSplitter-8.6.apk",
+  "notes": "启动图标换新（方案「斜切胶片」）：两段带齿孔的白色胶片条错位断开，齿孔透出渐变底、画面区浅紫填色，直白表达「视频被切成多段」；monochrome 主题图标同步更新。"
 }
