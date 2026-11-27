@@ -27,7 +27,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.3 (latest · versionCode 75)
+### 🚀 v8.4 (latest · versionCode 76)
+
+- **Fixed off-center text on the home "Select Video" button**: the play icon is now pinned to the left side independently, so the label is strictly horizontally centered; functionality and press animation unchanged
+- **Attribution review**: no new third-party dependencies, code or icons
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.3 (versionCode 75)
 
 - **Progress notifications adopt Android 16 Promoted Notifications**: split and update-download progress are promoted to ongoing notifications on Android 16+, shown at the top of the drawer, on the lock screen and as a status-bar chip
 - **System limitation**: **Promoted Notifications work only on Android 16 (API 36) and above**; on Android 13–15 progress notifications remain standard ongoing notifications with no functional impact

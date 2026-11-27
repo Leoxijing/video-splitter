@@ -6,6 +6,11 @@ APP 内可通过「检查更新」获取最新版本。
 
 ---
 
+## v8.4 (versionCode 76)
+- **修复主页「选择视频」按钮文字不居中**：左侧播放图标改为独立固定在按钮左侧（垂直居中），按钮文字不再与图标作为整体居中——此前 compound drawable 参与整体布局使文字中心右偏半个「图标+间距」宽度；现文字严格水平居中，按钮功能、按压动效与信息结构保持不变
+- **署名复核（2026-11-25）**：本次无新增第三方依赖、代码与图标，四处署名文档无需变更
+- **校验通过**：编译成功、Lint 0 Error、aapt 版本号 76/8.4
+
 ## v8.3 (versionCode 75)
 - **进度通知全面接入 Android 16 Promoted Notifications（Live Update）**：分割进度与更新下载进度通知在 Android 16+ 上通过 `EXTRA_REQUEST_PROMOTED_ONGOING` 请求推广资格，满足官方条件（ongoing 常驻、BigTextStyle/ProgressStyle 标准样式、非 MIN 渠道、无自定义视图、非组摘要）时由系统提升为推广常驻通知——显示在通知抽屉顶部、锁屏与状态栏 chip，默认展开且不可折叠
 - **权限与编译**：Manifest 声明 `POST_PROMOTED_NOTIFICATIONS`（非运行时权限，声明即授予）；compileSdk 34 → 36（targetSdk 保持 34、minSdk 33 不变，仅用于引用 API 36 常量）

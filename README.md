@@ -27,7 +27,13 @@
 
 ## 更新日志
 
-### 🚀 v8.3（最新 · versionCode 75）
+### 🚀 v8.4（最新 · versionCode 76）
+
+- **修复主页「选择视频」按钮文字不居中**：左侧播放图标独立固定在按钮左侧，文字严格水平居中；功能与按压动效保持不变
+- **署名复核**：无新增第三方依赖、代码与图标
+- **校验通过**：编译成功、Lint 0 Error
+
+### v8.3（versionCode 75）
 
 - **进度通知接入 Android 16 Promoted Notifications**：分割与更新下载进度在 Android 16+ 提升为推广常驻通知，显示在通知抽屉顶部、锁屏与状态栏 chip
 - **系统限制**：**Promoted Notifications 仅 Android 16（API 36）及以上生效**；Android 13–15 上仍为普通常驻进度通知，功能不受影响
