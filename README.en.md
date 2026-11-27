@@ -27,7 +27,13 @@ An Android app for when a single video over 4 GB hits cloud-transfer limits: it 
 
 ## Changelog
 
-### 🚀 v8.4 (latest · versionCode 76)
+### 🚀 v8.5 (latest · versionCode 77)
+
+- **Redesigned app icon**: a rounded play triangle split vertically with the two halves offset apart, floating shadow and edge vignette over the theme-purple gradient; monochrome themed icon added
+- **Attribution updated**: ic_launcher_monochrome.xml added to the original-icon list; all icons self-drawn
+- **Verified**: build succeeds, Lint 0 errors
+
+### v8.4 (versionCode 76)
 
 - **Fixed off-center text on the home "Select Video" button**: the play icon is now pinned to the left side independently, so the label is strictly horizontally centered; functionality and press animation unchanged
 - **Attribution review**: no new third-party dependencies, code or icons

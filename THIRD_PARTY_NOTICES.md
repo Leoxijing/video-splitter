@@ -44,7 +44,7 @@
 
 - 7 个界面矢量图标的路径数据来自 Google Material Icons（Apache-2.0），已在各 `ic_*.xml` 文件头注释中标注来源、原作者与许可，并在 README「第三方组件与署名」区块列出：
   `ic_arrow_back`、`ic_pause`（按同一造型等价重绘）、`ic_play_arrow`、`ic_skip_next`、`ic_fullscreen`、`ic_fullscreen_exit`、`ic_video_placeholder`。
-- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_btn.xml`、`glass_btn_primary.xml`、`glass_card.xml`、`glass_card_dark.xml` 及 night 变体）、其余 12 个界面图标（`ic_back`、`ic_changelog`、`ic_clean`、`ic_history`、`ic_limit`、`ic_logs`、`ic_theme`、`ic_update`、`ic_rename`、`ic_storage` 等）为本项目原创绘制，不含第三方素材。
+- 启动图标（`ic_launcher_foreground.xml`、`ic_launcher_background.xml`、`ic_launcher_monochrome.xml`、`mipmap-anydpi-v26/ic_launcher*.xml`）、渐变与玻璃质感背景（`bg_gradient.xml`、`glass_btn.xml`、`glass_btn_primary.xml`、`glass_card.xml`、`glass_card_dark.xml` 及 night 变体）、其余 12 个界面图标（`ic_back`、`ic_changelog`、`ic_clean`、`ic_history`、`ic_limit`、`ic_logs`、`ic_theme`、`ic_update`、`ic_rename`、`ic_storage` 等）为本项目原创绘制，不含第三方素材。
 - 未内置任何第三方字体文件；界面文字使用系统字体（`Typeface.DEFAULT` / `MONOSPACE`）。
 - `design_icons.py` 为开发期图标预览脚本（依赖 Pillow），不随 APK 分发，不属于分发内容。
 
